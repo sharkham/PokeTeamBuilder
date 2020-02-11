@@ -18,5 +18,6 @@ class Api::V1::PokemonsController < ApplicationController
 
   def pokemon_params
     params.require(:pokemon).permit(:name, :id, :height, :image)
+    # THIS NEEDS MORE PARAMS
   end
 end
