@@ -2,9 +2,13 @@ class Trainers {
   constructor(){
     this.trainer = []
     this.adapter = new TrainersAdapter()
-    // this.initBindingsAndEventListeners()
+    this.initBindingsAndEventListeners()
     this.fetchAndLoadTrainer()
     //this just fires when the thing starts. Going to have to find a way to login/signup first to fire it.
+  }
+
+  initBindingsAndEventListeners() {
+    this.div = document.getElementById("trainer-view")
   }
 
   fetchAndLoadTrainer() {
@@ -20,6 +24,9 @@ class Trainers {
   }
 
   render() {
+    let h2 = document.createElement("h2")
+    h2.innerText = this.trainer.name;
+    this.div.appendChild(h2)
     console.log(this.trainer)
   }
 
