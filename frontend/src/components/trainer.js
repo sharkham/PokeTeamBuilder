@@ -11,4 +11,12 @@ class Trainer {
     // this.yaxis =
     // this.zindex =
   }
+
+  // renderTrainer(){
+  //   let h2 = document.createElement("h2")
+  //   h2.innerText = this.name
+  //   h2.setAttribute("trainerId", `${this.id}`)
+  //   this.div.appendChild(h2)
+  //   console.log(this.pokemons)
+  // }
 }

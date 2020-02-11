@@ -28,6 +28,9 @@ class Trainers {
     h2.innerText = this.trainer.name
     h2.setAttribute("trainerId", `${this.trainer.id}`)
     this.div.appendChild(h2)
+    this.trainer.pokemons.forEach(pokemon => {
+      pokemon.renderPokemon()
+    })
     console.log(this.trainer.pokemons)
   }
 
