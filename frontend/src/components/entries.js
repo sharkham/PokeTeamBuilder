@@ -7,7 +7,18 @@ class Entries {
   }
 
   initBindingsAndEventListeners() {
-    this.selectMenu = document.getElementById("select-menu")
+    // this.selectMenu = document.getElementById("select-menu")
+    this.form = document.getElementById("poke-select-form")
+    this.form.addEventListener("change", this.createPokemon)
+  }
+
+  createPokemon() {
+    //is this in the right file?
+    //need to make sure it:
+    //creates pokemon if none exists
+    //changes pokemon species if it does exist
+    //deletes pokemon if set to blank(?) (might be bonus)
+    console.log("Pokemon is being created!")
   }
 
   fetchAndLoadEntries() {
@@ -24,14 +35,14 @@ class Entries {
     // const selectMenu = document.getElementById("select-menu")
     //make a select form full of each Pokémon.
     for (let i = 0; i < 6; i++) {
-      let form = document.createElement("form")
-      form.setAttribute("id", `poke${i + 1}`)
+      // let form = document.createElement("form")
       let select = document.createElement("select")
+      select.setAttribute("id", `poke${i + 1}`)
       this.entries.forEach(entry => {
         select.options[select.options.length] = new Option(`${entry.name}`, `${entry.name}`, false, false)
       })
-      this.selectMenu.appendChild(form)
-      form.appendChild(select)
+      // this.selectMenu.appendChild(form)
+      this.form.appendChild(select)
     }
   }
 
