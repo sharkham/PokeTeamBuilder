@@ -19,9 +19,9 @@ class Entries {
     //creates pokemon if none exists
     //changes pokemon species if it does exist
     //deletes pokemon if set to blank(?) (might be bonus)
-    console.log(e.target.value)
+    const value = e.target.value
     //somehow, get request to api/v1/entries based on value(id), and then use that info to make Pokémon
-    console.log(this)
+    this.adapter.createPokemon(value)
   }
 
   fetchAndLoadEntries() {
