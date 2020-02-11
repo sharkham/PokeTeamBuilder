@@ -17,6 +17,6 @@ class Api::V1::SpeciesController < ApplicationController
   private
 
   def species_params
-    params.require(:species).permit
+    params.require(:species).permit(:name, :id, :height, :image)
   end
 end
