@@ -1,6 +1,6 @@
 class Trainers {
   constructor(){
-    this.trainer = []
+    this.trainer = ""
     this.adapter = new TrainersAdapter()
     this.initBindingsAndEventListeners()
     this.fetchAndLoadTrainer()
@@ -25,9 +25,10 @@ class Trainers {
 
   render() {
     let h2 = document.createElement("h2")
-    h2.innerText = this.trainer.name;
+    h2.innerText = this.trainer.name
+    h2.setAttribute("trainerId", `${this.trainer.id}`)
     this.div.appendChild(h2)
-    console.log(this.trainer)
+    console.log(this.trainer.pokemons)
   }
 
 }
