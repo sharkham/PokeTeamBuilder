@@ -9,6 +9,7 @@ class Trainers {
 
   fetchAndLoadTrainer() {
     this.adapter.getTrainer(1)
+    //this (above) should NOT be hardcoded.
     .then(trainer => {
       this.trainer = new Trainer(trainer)
       // trainers.forEach(entry => this.trainers.push(new Entry(entry)))
