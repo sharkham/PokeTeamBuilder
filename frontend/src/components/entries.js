@@ -9,10 +9,13 @@ class Entries {
   initBindingsAndEventListeners() {
     // this.selectMenu = document.getElementById("select-menu")
     this.form = document.getElementById("poke-select-form")
+
+    //THIS CODE BELONGS IN POKEMONS, COMMENT OUT HERE LATER
     this.form.addEventListener("change", this.createPokemon.bind(this))
     //binding this here makes "this" the entries class so it can be used in createPokemon function
   }
 
+  //THIS CODE BELONGS IN POKEMONS, COMMENT OUT HERE LATER
   createPokemon(e) {
     //is this in the right file?
     //need to make sure it:
