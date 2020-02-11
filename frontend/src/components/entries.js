@@ -9,7 +9,8 @@ class Entries {
   initBindingsAndEventListeners() {
     // this.selectMenu = document.getElementById("select-menu")
     this.form = document.getElementById("poke-select-form")
-    this.form.addEventListener("change", this.createPokemon)
+    this.form.addEventListener("change", this.createPokemon.bind(this))
+    //binding this here makes "this" the entries class so it can be used in createPokemon function
   }
 
   createPokemon(e) {
@@ -18,7 +19,9 @@ class Entries {
     //creates pokemon if none exists
     //changes pokemon species if it does exist
     //deletes pokemon if set to blank(?) (might be bonus)
-    console.log("Pokemon is being created!")
+    console.log(e.target.value)
+    //somehow, get request to api/v1/entries based on value(id), and then use that info to make Pokémon
+    console.log(this)
   }
 
   fetchAndLoadEntries() {
@@ -39,7 +42,7 @@ class Entries {
       let select = document.createElement("select")
       select.setAttribute("id", `poke${i + 1}`)
       this.entries.forEach(entry => {
-        select.options[select.options.length] = new Option(`${entry.id}. ${entry.name}`, `${entry.name}`, false, false)
+        select.options[select.options.length] = new Option(`${entry.name}`, `${entry.id}`, false, false)
       })
       // this.selectMenu.appendChild(form)
       this.form.appendChild(select)
