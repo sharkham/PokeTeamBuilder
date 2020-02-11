@@ -20,12 +20,15 @@ class Entries {
     const selectMenu = document.getElementById("select-menu")
     //make a select form full of each Pokémon.
     const form1 = document.createElement("form")
-    const select1 = document.createElement("select")
-    // this.entries.forEach(entry => {
-    //   document.createElement("option").attributes
-
-    // })
+    for (let i = 0; i < 6; i++) {
+      let select = document.createElement("select")
+      select.setAttribute("id", `select${i + 1}`)
+      this.entries.forEach(entry => {
+        select.options[select.options.length] = new Option(`${entry.name}`, `${entry.name}`, false, false)
+      })
+      form1.appendChild(select)
+    }
     selectMenu.appendChild(form1)
-    form1.appendChild(select1)
   }
+
 }
