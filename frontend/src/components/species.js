@@ -7,8 +7,16 @@ class Species {
   }
 
   fetchAndLoadSpecies() {
-    this.adapter.getSpecies().then(species => {
-      console.log(species)
+    this.adapter.getSpecies()
+    .then(species => {
+      return console.log(species)
     })
+    .then(() => {
+      this.render()
+    })
+  }
+
+  render() {
+    console.log("rendering...")
   }
 }
