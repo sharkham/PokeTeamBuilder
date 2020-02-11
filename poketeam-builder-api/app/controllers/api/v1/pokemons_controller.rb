@@ -6,7 +6,7 @@ class Api::V1::PokemonsController < ApplicationController
 
   def show
     @pokemon = Pokemon.find(params[:id])
-    render json: PokemonSerializer.new(pokemon).to_serialized_json, status: 200
+    render json: PokemonSerializer.new(@pokemon).to_serialized_json, status: 200
   end
 
   def create
