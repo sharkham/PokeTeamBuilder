@@ -25,3 +25,27 @@
 Entry.create(name: "Bulbasaur", height: 7)
 Entry.create(name: "Ivysaur", height: 10)
 Entry.create(name: "Venusaur", height: 20)
+Entry.create(name: "Charmander", height: 6)
+Entry.create(name: "Charmeleon", height: 11)
+Entry.create(name: "Charizard", height: 17)
+Entry.create(name: "Squirtle", height: 5)
+Entry.create(name: "Wartortle", height: 10)
+Entry.create(name: "Blastoise", height: 16)
+
+red = Trainer.create(name: "Red", height: 15)
+blue = Trainer.create(name: "Blue", height: 16)
+
+red.pokemons.build(name: "Bulbasaur", height: 7)
+red.pokemons.build(name: "Ivysaur", height: 10)
+red.pokemons.build(name: "Charmander", height: 6)
+red.pokemons.build(name: "Charmeleon", height: 11)
+red.save
+
+blue.pokemons.build(name: "Blastoise", height: 16)
+blue.pokemons.build(name: "Wartortle", height: 10)
+blue.pokemons.build(name: "Charizard", height: 17)
+blue.save
+
+
+
+Pokemon.create(name: "Bulbasaur", height: 7)
