@@ -5,4 +5,6 @@ class Entry {
     this.image = entryJSON.image
     this.height = entryJSON.height
   }
+
+
 }

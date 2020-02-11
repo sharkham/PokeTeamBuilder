@@ -2,8 +2,12 @@ class Entries {
   constructor(){
     this.entries = []
     this.adapter = new EntriesAdapter()
-    // this.bindEventListeners()
+    this.initBindingsAndEventListeners()
     this.fetchAndLoadEntries()
+  }
+
+  initBindingsAndEventListeners() {
+    this.selectMenu = document.getElementById("select-menu")
   }
 
   fetchAndLoadEntries() {
@@ -17,7 +21,7 @@ class Entries {
   }
 
   render() {
-    const selectMenu = document.getElementById("select-menu")
+    // const selectMenu = document.getElementById("select-menu")
     //make a select form full of each Pokémon.
     for (let i = 0; i < 6; i++) {
       let form = document.createElement("form")
@@ -26,7 +30,7 @@ class Entries {
       this.entries.forEach(entry => {
         select.options[select.options.length] = new Option(`${entry.name}`, `${entry.name}`, false, false)
       })
-      selectMenu.appendChild(form)
+      this.selectMenu.appendChild(form)
       form.appendChild(select)
     }
   }
