@@ -4,6 +4,11 @@ class CreatePokemons < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :image
       t.integer :height
+      t.integer :xaxis
+      t.integer :yaxis
+      t.integer :zindex
+      t.belongs_to :trainer, null: false, foreign_key: true
+
       #add the other attributes in here
 
       t.timestamps
