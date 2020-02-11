@@ -12,7 +12,7 @@ class Entries {
     this.form.addEventListener("change", this.createPokemon)
   }
 
-  createPokemon() {
+  createPokemon(e) {
     //is this in the right file?
     //need to make sure it:
     //creates pokemon if none exists
