@@ -18,5 +18,7 @@ class Species {
 
   render() {
     console.log("rendering...")
+    const selectMenu = document.getElementById("select-menu")
+    selectMenu.innerHTML = "my pokemon menu here"
   }
 }
