@@ -11,6 +11,6 @@ class Pokemon {
     // this.zindex =
 
     //pull this from the page somehow
-    // this.trainer =
+    // this.trainer_id =
   }
 }
