@@ -31,10 +31,8 @@ class Trainers {
     this.trainer.pokemons.forEach(pokemon => {
       pokemon = new Pokemon(pokemon)
       pokemon.renderPokemon()
-      // console.log(pokemon)
-      // pokemon.renderPokemon()
+      // is this the place for this to be happening?
     })
-    console.log(this.trainer.pokemons)
   }
 
 }
