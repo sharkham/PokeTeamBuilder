@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_224303) do
+ActiveRecord::Schema.define(version: 2020_02_11_011849) do
 
-  create_table "species", force: :cascade do |t|
+  create_table "entries", force: :cascade do |t|
     t.string "name"
     t.string "image"
     t.integer "height"

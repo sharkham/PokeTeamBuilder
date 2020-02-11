@@ -22,6 +22,6 @@
 #   species.save
 # end
 
-Species.create(name: "Bulbasaur", height: 7)
-Species.create(name: "Ivysaur", height: 10)
-Species.create(name: "Venusaur", height: 20)
+Entry.create(name: "Bulbasaur", height: 7)
+Entry.create(name: "Ivysaur", height: 10)
+Entry.create(name: "Venusaur", height: 20)
