@@ -10,7 +10,6 @@ class Entries {
     this.adapter.getEntries()
     .then(entries => {
       entries.forEach(entry => this.entries.push(new Entry(entry)))
-      return console.log(entries)
     })
     .then(() => {
       this.render()
@@ -18,9 +17,15 @@ class Entries {
   }
 
   render() {
-    console.log("rendering...")
     const selectMenu = document.getElementById("select-menu")
-    selectMenu.innerHTML = "my pokemon menu here"
-    console.log(this.entries)
+    //make a select form full of each Pokémon.
+    const form1 = document.createElement("form")
+    const select1 = document.createElement("select")
+    // this.entries.forEach(entry => {
+    //   document.createElement("option").attributes
+
+    // })
+    selectMenu.appendChild(form1)
+    form1.appendChild(select1)
   }
 }
