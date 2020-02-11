@@ -4,10 +4,13 @@ class Pokemons {
     this.adapter = new PokemonsAdapter()
     this.initBindingsAndEventListeners()
     this.fetchAndLoadPokemons()
+    //this needs to load with trainer. Pokemons need to load with trainer
   }
 
   initBindingsAndEventListeners() {
     // this.selectMenu = document.getElementById("select-menu")
+    // this.trainer =
+    // //find the trainer from id put on page??
     this.form = document.getElementById("poke-select-form")
     this.form.addEventListener("change", this.createPokemon.bind(this))
     //binding this here makes "this" the pokemons class so it can be used in createPokemon function
