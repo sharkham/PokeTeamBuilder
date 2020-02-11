@@ -2,7 +2,7 @@ class Trainers {
   constructor(){
     this.trainer = []
     this.adapter = new TrainersAdapter()
-    this.initBindingsAndEventListeners()
+    // this.initBindingsAndEventListeners()
     this.fetchAndLoadTrainer()
     //this just fires when the thing starts. Going to have to find a way to login/signup first to fire it.
   }
@@ -17,6 +17,10 @@ class Trainers {
     .then(() => {
       this.render()
     })
+  }
+
+  render() {
+    console.log(this.trainer)
   }
 
 }
