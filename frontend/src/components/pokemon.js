@@ -13,4 +13,8 @@ class Pokemon {
     //pull this from the page somehow
     // this.trainer_id =
   }
+
+  renderPokemon(){
+    console.log(this.name)
+  }
 }

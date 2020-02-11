@@ -29,7 +29,10 @@ class Trainers {
     h2.setAttribute("trainerId", `${this.trainer.id}`)
     this.div.appendChild(h2)
     this.trainer.pokemons.forEach(pokemon => {
+      pokemon = new Pokemon(pokemon)
       pokemon.renderPokemon()
+      // console.log(pokemon)
+      // pokemon.renderPokemon()
     })
     console.log(this.trainer.pokemons)
   }
