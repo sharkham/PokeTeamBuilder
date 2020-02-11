@@ -39,7 +39,7 @@ class Entries {
       let select = document.createElement("select")
       select.setAttribute("id", `poke${i + 1}`)
       this.entries.forEach(entry => {
-        select.options[select.options.length] = new Option(`${entry.name}`, `${entry.name}`, false, false)
+        select.options[select.options.length] = new Option(`${entry.id}. ${entry.name}`, `${entry.name}`, false, false)
       })
       // this.selectMenu.appendChild(form)
       this.form.appendChild(select)
