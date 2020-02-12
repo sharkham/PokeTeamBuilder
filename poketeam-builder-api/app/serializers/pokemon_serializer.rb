@@ -9,7 +9,7 @@ class PokemonSerializer
 
   def to_serialized_json
     options = {
-      only: [:id, :name, :image, :height, :xaxis, :yaxis, :zindex, :trainer_id]
+      only: [:id, :name, :number, :image, :height, :xaxis, :yaxis, :zindex, :trainer_id]
       # include: [:id, :name]
     }
     @pokemon.to_json(options)

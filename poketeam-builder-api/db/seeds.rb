@@ -35,15 +35,13 @@ Entry.create(name: "Blastoise", height: 16)
 red = Trainer.create(name: "Red", height: 15)
 blue = Trainer.create(name: "Blue", height: 16)
 
-red.pokemons.build(name: "Bulbasaur", height: 7)
-red.pokemons.build(name: "Ivysaur", height: 10)
-red.pokemons.build(name: "Charmander", height: 6)
-red.pokemons.build(name: "Charmeleon", height: 11)
+red.pokemons.build(name: "Bulbasaur", number: 1, height: 7)
+red.pokemons.build(name: "Ivysaur", number: 2, height: 10)
 red.save
 
-blue.pokemons.build(name: "Blastoise", height: 16)
-blue.pokemons.build(name: "Wartortle", height: 10)
-blue.pokemons.build(name: "Charizard", height: 17)
+blue.pokemons.build(name: "Blastoise", number: 1, height: 16)
+blue.pokemons.build(name: "Wartortle", number: 2, height: 10)
+blue.pokemons.build(name: "Charizard", number: 3, height: 17)
 blue.save
 
 

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_200012) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
+    t.integer "number"
     t.string "image"
     t.integer "height"
     t.integer "xaxis"

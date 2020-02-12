@@ -2,6 +2,7 @@ class CreatePokemons < ActiveRecord::Migration[6.0]
   def change
     create_table :pokemons do |t|
       t.string :name
+      t.integer :number
       t.string :image
       t.integer :height
       t.integer :xaxis
