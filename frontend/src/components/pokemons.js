@@ -1,6 +1,7 @@
 class Pokemons {
   constructor(entries){
     this.pokemons = []
+    //this needs to load with the trainer's Pokemon.
     this.adapter = new PokemonsAdapter()
     this.initBindingsAndEventListeners()
     // this.fetchAndLoadPokemons()

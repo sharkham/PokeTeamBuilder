@@ -4,6 +4,7 @@ class App {
     // console.log(this.entries)
     this.trainers = new Trainers()
     this.pokemons = new Pokemons(this.entries)
+    //pokemons needs to load with trainer as well.
   }
 
 
