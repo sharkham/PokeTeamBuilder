@@ -8,7 +8,7 @@ class TrainerSerializer
     options = {
       include: {
         pokemons: {
-          only: [:id, :name, :image, :height, :xaxis, :yaxis, :zindex, :trainer_id]
+          only: [:id, :name, :number, :image, :height, :xaxis, :yaxis, :zindex, :trainer_id]
         }
       }
     }
