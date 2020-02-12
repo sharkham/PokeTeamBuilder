@@ -1,9 +1,10 @@
 class Pokemons {
-  constructor(){
+  constructor(entries){
     this.pokemons = []
     this.adapter = new PokemonsAdapter()
     this.initBindingsAndEventListeners()
-    this.fetchAndLoadPokemons()
+    // this.fetchAndLoadPokemons()
+    this.pokedex = entries
     //this needs to load with trainer. Pokemons need to load with trainer
   }
 
@@ -17,6 +18,7 @@ class Pokemons {
   }
 
   createPokemon(e) {
+    console.log(this.pokedex.entries[e.target.value-1])
     //need to make sure it:
     //creates pokemon if none exists
     //changes pokemon species if it does exist

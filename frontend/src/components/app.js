@@ -1,7 +1,9 @@
 class App {
   constructor(){
     this.entries = new Entries()
+    // console.log(this.entries)
     this.trainers = new Trainers()
+    this.pokemons = new Pokemons(this.entries)
   }
 
 

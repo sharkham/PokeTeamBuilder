@@ -11,21 +11,21 @@ class Entries {
     this.form = document.getElementById("poke-select-form")
 
     //THIS CODE BELONGS IN POKEMONS, COMMENT OUT HERE LATER
-    this.form.addEventListener("change", this.createPokemon.bind(this))
+    // this.form.addEventListener("change", this.createPokemon.bind(this))
     //binding this here makes "this" the entries class so it can be used in createPokemon function
   }
 
-  //THIS CODE BELONGS IN POKEMONS, COMMENT OUT HERE LATER
-  createPokemon(e) {
-    //is this in the right file?
-    //need to make sure it:
-    //creates pokemon if none exists
-    //changes pokemon species if it does exist
-    //deletes pokemon if set to blank(?) (might be bonus)
-    const value = e.target.value
-    //somehow, get request to api/v1/entries based on value(id), and then use that info to make Pokémon
-    this.adapter.createPokemon(value)
-  }
+  //THIS CODE BELONGS IN POKEMONS, COMMENT OUT HERE
+  // createPokemon(e) {
+  //   //is this in the right file?
+  //   //need to make sure it:
+  //   //creates pokemon if none exists
+  //   //changes pokemon species if it does exist
+  //   //deletes pokemon if set to blank(?) (might be bonus)
+  //   const value = e.target.value
+  //   //somehow, get request to api/v1/entries based on value(id), and then use that info to make Pokémon
+  //   this.adapter.createPokemon(value)
+  // }
 
   fetchAndLoadEntries() {
     this.adapter.getEntries()
