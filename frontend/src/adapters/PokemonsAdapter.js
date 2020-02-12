@@ -31,7 +31,7 @@ class PokemonsAdapter {
         "Accept": "application/json"
       },
       body: JSON.stringify({ pokemon: pokemon })
-    })
+    }).then(res => res.json())
   }
 
   updatePokemon(value, trainerId) {

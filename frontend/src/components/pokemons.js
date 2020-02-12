@@ -27,6 +27,9 @@ class Pokemons {
     const value = e.target.value
     const pokedexEntry = this.pokedex.entries[value-1]
     //somehow, get request to api/v1/entries based on value(id), and then use that info to make Pokémon
-    this.adapter.createPokemon(value, this.trainerId, pokedexEntry)
+    this.adapter.createPokemon(value, this.trainerId, pokedexEntry).then(pokemon => {
+      this.pokemons.push(pokemon)
+      console.log(this.pokemons)
+    })
   }
 }
