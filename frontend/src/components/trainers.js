@@ -1,9 +1,10 @@
 class Trainers {
-  constructor(){
+  constructor(entries){
     this.trainer = ""
     this.adapter = new TrainersAdapter()
     this.initBindingsAndEventListeners()
     this.fetchAndLoadTrainer()
+    this.entries = entries
     //this just fires when the thing starts. Going to have to find a way to login/signup first to fire it.
   }
 
