@@ -9,6 +9,7 @@ class PokemonsAdapter {
 
   createPokemon(value, trainerId) {
     const pokemon = {
+
       //find by id? Or find by name if I change the value
       //then set all properties here
     }
@@ -16,5 +17,16 @@ class PokemonsAdapter {
       method: "POST",
       body: JSON.stringify({ pokemon: pokemon })
     })
+  }
+
+  updatePokemon(value, trainerId) {
+    const pokemon = {
+      //updated values
+    }
+    return fetch(this.baseURL, {
+      method: "PATCH",
+      body: JSON.stringify({ pokemon: pokemon })
+    })
+
   }
 }
