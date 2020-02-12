@@ -9,6 +9,7 @@ class Trainers {
 
   initBindingsAndEventListeners() {
     this.div = document.getElementById("trainer-view")
+    this.h2 = document.getElementById("trainername")
   }
 
   fetchAndLoadTrainer() {
@@ -24,10 +25,11 @@ class Trainers {
   }
 
   render() {
-    let h2 = document.createElement("h2")
-    h2.innerText = this.trainer.name
-    h2.setAttribute("trainerId", `${this.trainer.id}`)
-    this.div.appendChild(h2)
+    // let h2 = document.createElement("h2")
+    this.h2.innerText = this.trainer.name
+    this.h2.setAttribute("id", "trainername")
+    this.h2.setAttribute("trainerid", `${this.trainer.id}`)
+    // this.div.appendChild(h2)
     this.trainer.pokemons.forEach(pokemon => {
       pokemon = new Pokemon(pokemon)
       pokemon.renderPokemon()
