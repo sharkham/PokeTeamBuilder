@@ -19,6 +19,7 @@ class Pokemons {
   }
 
   createPokemon(e) {
+    let boxNumber = e.target.id[e.target.id.length-1]
     let trainerString = document.getElementById("trainername").getAttribute("trainerid")
     this.trainerId = parseInt(trainerString, 10)
     //need to make sure it:
@@ -28,9 +29,8 @@ class Pokemons {
     const value = e.target.value
     const pokedexEntry = this.pokedex.entries[value-1]
     //somehow, get request to api/v1/entries based on value(id), and then use that info to make Pokémon
-    this.adapter.createPokemon(value, this.trainerId, pokedexEntry).then(pokemon => {
+    this.adapter.createPokemon(value, this.trainerId, pokedexEntry, boxNumber).then(pokemon => {
       this.pokemons.push(pokemon)
-      console.log(this.pokemons)
     })
   }
 }

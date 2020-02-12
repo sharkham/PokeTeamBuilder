@@ -15,6 +15,7 @@ class PokemonsAdapter {
     // const sizeValues = setSizeValues(boxNumber)
     const pokemon = {
       name: pokedexEntry.name,
+      number: boxNumber,
       image: pokedexEntry.image,
       height: pokedexEntry.height,
       // xaxis: sizeValues[x],
