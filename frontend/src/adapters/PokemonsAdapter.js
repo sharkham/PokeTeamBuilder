@@ -7,18 +7,19 @@ class PokemonsAdapter {
   //   return fetch(this.baseUrl).then(res => res.json())
   // }
 
-  createPokemon(value, trainerId, pokedexEntry) {
+  createPokemon(value, trainerId, pokedexEntry, boxNumber) {
     // console.log(value)
     // console.log(trainerId)
     // console.log(pokedexEntry)
     // console.log(pokedex.entries)
+    // const sizeValues = setSizeValues(boxNumber)
     const pokemon = {
       name: pokedexEntry.name,
       image: pokedexEntry.image,
       height: pokedexEntry.height,
-      // xaxis: ,
-      // yaxis: ,
-      // zindex: ,
+      // xaxis: sizeValues[x],
+      // yaxis: [y],
+      // zindex: [z],
       trainer_id: trainerId
       //find by id? Or find by name if I change the value
       //then set all properties here
@@ -39,4 +40,12 @@ class PokemonsAdapter {
     })
 
   }
+
+  //helper methods
+
+  // setSizeValues(boxNumber) {
+
+
+  //   //return a hash of position values dependent on which box the Pokémon was selected from
+  // }
 }
