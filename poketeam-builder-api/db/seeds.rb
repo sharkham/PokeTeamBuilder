@@ -22,15 +22,15 @@
 #   species.save
 # end
 
-Entry.create(name: "Bulbasaur", height: 7)
-Entry.create(name: "Ivysaur", height: 10)
-Entry.create(name: "Venusaur", height: 20)
-Entry.create(name: "Charmander", height: 6)
-Entry.create(name: "Charmeleon", height: 11)
-Entry.create(name: "Charizard", height: 17)
-Entry.create(name: "Squirtle", height: 5)
-Entry.create(name: "Wartortle", height: 10)
-Entry.create(name: "Blastoise", height: 16)
+Entry.create(name: "Bulbasaur", height: 7, image: "image/1.png")
+Entry.create(name: "Ivysaur", height: 10, image: "image/2.png")
+Entry.create(name: "Venusaur", height: 20, image: "image/3.png")
+Entry.create(name: "Charmander", height: 6, image: "image/4.png")
+Entry.create(name: "Charmeleon", height: 11, image: "image/5.png")
+Entry.create(name: "Charizard", height: 17, image: "image/6.png")
+Entry.create(name: "Squirtle", height: 5, image: "image/7.png")
+Entry.create(name: "Wartortle", height: 10, image: "image/8.png")
+Entry.create(name: "Blastoise", height: 16, image: "image/9.png")
 
 red = Trainer.create(name: "Red", height: 15)
 blue = Trainer.create(name: "Blue", height: 16)
