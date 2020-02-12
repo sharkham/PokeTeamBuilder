@@ -8,8 +8,11 @@ class PokemonsAdapter {
   //   return fetch(this.baseUrl).then(res => res.json())
   // }
 
-  createPokemon(value, trainerId) {
+  createPokemon(value, trainerId, pokedexEntry) {
     console.log(value)
+    console.log(trainerId)
+    console.log(pokedexEntry)
+    // console.log(pokedex.entries)
     // const pokemon = {
 
     //   //find by id? Or find by name if I change the value
