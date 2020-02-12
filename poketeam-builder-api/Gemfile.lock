@@ -60,6 +60,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.1)
+    coderay (1.1.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     erubi (1.9.0)
@@ -88,6 +89,9 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     puma (4.3.1)
       nio4r (~> 2.0)
     rack (2.2.2)
@@ -154,6 +158,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   listen (>= 3.0.5, < 3.2)
+  pry
   puma (~> 4.1)
   rack-cors
   rails (~> 6.0.2, >= 6.0.2.1)
