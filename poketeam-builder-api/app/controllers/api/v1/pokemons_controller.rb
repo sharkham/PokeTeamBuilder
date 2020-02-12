@@ -10,7 +10,6 @@ class Api::V1::PokemonsController < ApplicationController
   end
 
   def create
-    binding.pry
     @pokemon = Pokemon.create(pokemon_params)
     render json: PokemonSerializer.new(@pokemon).to_serialized_json, status: 200
   end
