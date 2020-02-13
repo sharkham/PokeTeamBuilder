@@ -27,6 +27,14 @@ class Trainers {
     e.preventDefault()
     const value = this.trainerLogin.value
     console.log(value)
+    this.adapter.getTrainer(value)
+    .then(trainer => {
+      this.trainer = new Trainer(trainer)
+    })
+    .then(() => {
+      this.render()
+    })
+    // console.log(value)
     // this.adapter.getTrainer(1)
     // //this (above) should NOT be hardcoded.
     // .then(trainer => {
