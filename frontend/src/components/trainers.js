@@ -9,7 +9,7 @@ class Trainers {
 
   initBindingsAndEventListeners() {
     this.div = document.getElementById("trainer-view")
-    this.h2 = document.getElementById("trainername")
+    // this.h2 = document.getElementById("trainername")
     this.loginField = document.getElementById("trainerlogin")
     this.login = document.getElementById("login")
     this.login.addEventListener("submit", this.fetchAndLoginTrainer.bind(this))
@@ -21,7 +21,7 @@ class Trainers {
       trainers.forEach(trainer => this.trainers.push(trainer))
     })
     .then(() => {
-      console.log(this.trainers)
+      // console.log(this.trainers)
     })
   }
 
@@ -36,18 +36,23 @@ class Trainers {
         this.trainer = new Trainer(trainer)
       })
       .then(() => {
-        this.renderTrainer()
+        this.trainer.renderTrainer()
+        this.trainer.renderTrainersPokemons(this.entries)
       })
     } else {
       alert(`${value} is not an existing trainer. Please try again or create a new trainer!`)
     }
   }
 
-  renderTrainer() {
-    this.h2.innerText = this.trainer.name
-    this.h2.setAttribute("id", "trainername")
-    this.h2.setAttribute("trainerid", `${this.trainer.id}`)
-    this.pokemons = new Pokemons(this.entries, this.trainer)
-  }
+  // renderPokemons() {
+  //   this.pokemons = new Pokemons(this.entries, this.trainer)
+  // }
+
+  // renderTrainer() {
+  //   this.h2.innerText = this.trainer.name
+  //   this.h2.setAttribute("id", "trainername")
+  //   this.h2.setAttribute("trainerid", `${this.trainer.id}`)
+  //   this.pokemons = new Pokemons(this.entries, this.trainer)
+  // }
 
 }
