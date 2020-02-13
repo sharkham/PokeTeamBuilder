@@ -29,58 +29,30 @@ class Trainers {
     })
   }
 
-  // fetchAndLoadEntries() {
-  //   this.adapter.getEntries()
-  //   .then(entries => {
-  //     entries.forEach(entry => this.entries.push(new Entry(entry)))
-  //   })
-  //   .then(() => {
-  //     this.render()
-  //   })
-  // }
-
-  // findTrainer(trainer, value) {
-  //   trainer.name === value
-  // }
-
   fetchAndLoginTrainer(e) {
     e.preventDefault()
     const value = this.loginField.value
-    //iterate over this.trainers and find object where value is name.
     const trainerObj = this.trainers.find(trainer => trainer.name === value)
-    // const trainerId = this.trainers.find(({name}) => { name === value })
-    const trainerId = trainerObj.id
-    this.adapter.getTrainer(trainerId)
-    .then(trainer => {
-      this.trainer = new Trainer(trainer)
-    })
-    .then(() => {
-      this.renderTrainer()
-    })
-    // console.log(value)
-    // this.adapter.getTrainer(1)
-    // //this (above) should NOT be hardcoded.
-    // .then(trainer => {
-    //   this.trainer = new Trainer(trainer)
-    //   // trainers.forEach(entry => this.trainers.push(new Entry(entry)))
-    // })
-    // .then(() => {
-    //   this.renderTrainer()
-    // })
+    if (!!trainerObj) {
+      const trainerId = trainerObj.id
+      this.adapter.getTrainer(trainerId)
+      .then(trainer => {
+        this.trainer = new Trainer(trainer)
+      })
+      .then(() => {
+        this.renderTrainer()
+      })
+    } else {
+      console.log("Who dis?")
+    }
+
   }
 
   renderTrainer() {
-    // let h2 = document.createElement("h2")
     this.h2.innerText = this.trainer.name
     this.h2.setAttribute("id", "trainername")
     this.h2.setAttribute("trainerid", `${this.trainer.id}`)
     this.pokemons = new Pokemons(this.entries, this.trainer)
-    // this.div.appendChild(h2)
-    // this.trainer.pokemons.forEach(pokemon => {
-    //   pokemon = new Pokemon(pokemon)
-    //   pokemon.renderPokemon()
-    //   // is this the place for this to be happening?
-    // })
   }
 
 }
