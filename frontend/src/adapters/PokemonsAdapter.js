@@ -35,9 +35,12 @@ class PokemonsAdapter {
     }).then(res => res.json())
   }
 
-  updatePokemon(value, trainerId) {
+  updatePokemon(value, trainerId, pokedexEntry, boxNumber) {
     const pokemon = {
       //updated values
+      name: pokedexEntry.name,
+      image: pokedexEntry.image,
+      height: pokedexEntry.height
     }
     return fetch(this.baseURL, {
       method: "PATCH",
