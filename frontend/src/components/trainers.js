@@ -4,11 +4,7 @@ class Trainers {
     this.adapter = new TrainersAdapter()
     this.initBindingsAndEventListeners()
     this.fetchAndLoadTrainers()
-    // this.fetchAndLoadTrainer()
-    //Gotta make the "fetch and load" part of an event listener on page
-    //make login/signup form
     this.entries = entries
-    //this just fires when the thing starts. Going to have to find a way to login/signup first to fire it.
   }
 
   initBindingsAndEventListeners() {
@@ -45,7 +41,6 @@ class Trainers {
     } else {
       alert(`${value} is not an existing trainer. Please try again or create a new trainer!`)
     }
-
   }
 
   renderTrainer() {
