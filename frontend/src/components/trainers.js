@@ -1,6 +1,6 @@
 class Trainers {
   constructor(entries){
-    this.trainer = ""
+    // this.trainer = ""
     this.adapter = new TrainersAdapter()
     this.initBindingsAndEventListeners()
     this.fetchAndLoadTrainer()
