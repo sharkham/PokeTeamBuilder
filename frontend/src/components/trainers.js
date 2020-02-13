@@ -14,6 +14,10 @@ class Trainers {
     this.loginSubmit = document.getElementById("submitlogin")
     this.login = document.getElementById("login")
     this.login.addEventListener("submit", this.fetchAndLoginTrainer.bind(this))
+    this.signupField = document.getElementById("trainersignup")
+    this.signupSubmit = document.getElementById("submitsignup")
+    this.signup = document.getElementById("signup")
+    this.signup.addEventListener("submit", this.createAndLoginTrainer.bind(this))
   }
 
   fetchAndLoadTrainers() {
@@ -24,6 +28,30 @@ class Trainers {
     .then(() => {
       // console.log(this.trainers)
     })
+  }
+
+  createAndLoginTrainer(e) {
+    e.preventDefault()
+    const name = this.signupField.value
+    const trainerObj = this.trainers.find(trainer => trainer.name === name)
+    if (!trainerObj) {
+      this.adapter.createTrainer(name)
+      .then(trainer => {
+        this.trainer = new Trainer(trainer)
+      })
+      .then(() => {
+        this.setTrainer()
+        // this.trainer.renderTrainer()
+        // this.trainer.renderTrainersPokemons(this.entries)
+        // this.entries.enableFields()
+        // this.signupField.value = ""
+        // this.disableSignupFields()
+        // this.loginField.value = ""
+        // this.disableLoginFields()
+      })
+    } else {
+      alert(`${name} is an existing trainer. Please try again or login!`)
+    }
   }
 
   fetchAndLoginTrainer(e) {
@@ -37,20 +65,36 @@ class Trainers {
         this.trainer = new Trainer(trainer)
       })
       .then(() => {
-        this.trainer.renderTrainer()
-        this.trainer.renderTrainersPokemons(this.entries)
-        this.entries.enableFields()
-        this.loginField.value = ""
-        this.disableLoginFields()
+        this.setTrainer()
+        // this.trainer.renderTrainer()
+        // this.trainer.renderTrainersPokemons(this.entries)
+        // this.entries.enableFields()
+        // this.loginField.value = ""
+        // this.disableLoginFields()
       })
     } else {
       alert(`${value} is not an existing trainer. Please try again or create a new trainer!`)
     }
   }
 
+  setTrainer() {
+    this.trainer.renderTrainer()
+    this.trainer.renderTrainersPokemons(this.entries)
+    this.entries.enableFields()
+    this.signupField.value = ""
+    this.disableSignupFields()
+    this.loginField.value = ""
+    this.disableLoginFields()
+  }
+
   disableLoginFields() {
     this.loginField.setAttribute("disabled", "true")
     this.loginSubmit.setAttribute("disabled", "true")
+  }
+
+  disableSignupFields() {
+    this.signupField.setAttribute("disabled", "true")
+    this.signupSubmit.setAttribute("disabled", "true")
   }
 
   // renderPokemons() {
