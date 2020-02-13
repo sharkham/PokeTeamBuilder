@@ -9,7 +9,7 @@ class TrainersAdapter {
       return res.json()
     })
   }
-  }
+
 
   getTrainer(trainerId) {
     return fetch(`${this.baseUrl}/${trainerId}`).then(res => res.json())
