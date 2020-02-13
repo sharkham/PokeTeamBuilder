@@ -28,6 +28,7 @@ class Pokemons {
     const pokemonObj = this.pokemons.find(pokemon => pokemon.number === boxNumber)
     if (!!pokemonObj) {
       console.log("there is a pokemon in this box!")
+      this.updatePokemon(entryNum, boxNumber)
     } else {
       console.log("there isn't a pokemon in this box yet!")
       this.createPokemon(entryNum, boxNumber)
@@ -36,7 +37,7 @@ class Pokemons {
 
   createPokemon(entryNum, boxNumber) {
     const pokedexEntry = this.pokedex.entries[entryNum-1]
-    this.adapter.createPokemon(entryNum, this.trainer.id, pokedexEntry, boxNumber).then(pokemon => {
+    this.adapter.createPokemon(this.trainer.id, pokedexEntry, boxNumber).then(pokemon => {
       this.pokemons.push(pokemon)
       pokemon = new Pokemon(pokemon)
       this.view.innerHTML += pokemon.viewBoxHTML()

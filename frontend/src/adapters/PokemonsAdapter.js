@@ -7,8 +7,8 @@ class PokemonsAdapter {
   //   return fetch(this.baseUrl).then(res => res.json())
   // }
 
-  createPokemon(value, trainerId, pokedexEntry, boxNumber) {
-    console.log(value)
+  createPokemon(trainerId, pokedexEntry, boxNumber) {
+    // console.log(value)
     // console.log(trainerId)
     // console.log(pokedexEntry)
     // console.log(pokedex.entries)
