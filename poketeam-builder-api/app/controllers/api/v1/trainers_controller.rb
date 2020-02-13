@@ -6,7 +6,7 @@ class Api::V1::TrainersController < ApplicationController
   end
 
   def show
-    trainer = Trainer.find_by(params[:id])
+    trainer = Trainer.find(params[:id])
     render json: TrainerSerializer.new(trainer).to_serialized_json, status: 200
   end
 
