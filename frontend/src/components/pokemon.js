@@ -14,7 +14,7 @@ class Pokemon {
     // this.trainer_id =
   }
 
-  renderPokemonHTML(){
+  viewBoxHTML(){
     return `<img src="${this.image}">`
     // console.log("hey!")
     // //this is where to display the image of them but double check how this happens.

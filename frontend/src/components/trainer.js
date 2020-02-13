@@ -14,13 +14,19 @@ class Trainer {
 
   initBindingsAndEventListeners() {
     this.h2 = document.getElementById("trainername")
+    this.view = document.getElementById("view-box")
   }
 
   renderTrainer() {
     this.h2.innerText = this.name
     this.h2.setAttribute("id", "trainername")
     this.h2.setAttribute("trainerid", `${this.id}`)
+    this.renderTrainerInViewBox()
     // this.pokemons = new Pokemons(this.entries, this.trainer)
+  }
+
+  renderTrainerInViewBox() {
+    this.view.innerHTML += `<img src="${this.image}">`
   }
 
   renderTrainersPokemons(entries) {

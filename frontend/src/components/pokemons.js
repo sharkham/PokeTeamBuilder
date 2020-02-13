@@ -35,16 +35,16 @@ class Pokemons {
     this.adapter.createPokemon(value, this.trainerId, pokedexEntry, boxNumber).then(pokemon => {
       this.pokemons.push(pokemon)
       pokemon = new Pokemon(pokemon)
-      this.view.innerHTML += pokemon.renderPokemonHTML()
+      this.view.innerHTML += pokemon.viewBoxHTML()
       // console.log(this.pokemons)
-      // pokemon.renderPokemonHTML()
+      // pokemon.renderPokemonInViewBox()
     })
   }
 
   render() {
     this.pokemons.forEach(pokemon => {
       pokemon = new Pokemon(pokemon)
-      this.view.innerHTML += pokemon.renderPokemonHTML()
+      this.view.innerHTML += pokemon.viewBoxHTML()
       // is this the place for this to be happening?
     })
   }

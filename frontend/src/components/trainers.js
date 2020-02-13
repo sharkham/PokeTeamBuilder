@@ -41,13 +41,6 @@ class Trainers {
       })
       .then(() => {
         this.setTrainer()
-        // this.trainer.renderTrainer()
-        // this.trainer.renderTrainersPokemons(this.entries)
-        // this.entries.enableFields()
-        // this.signupField.value = ""
-        // this.disableSignupFields()
-        // this.loginField.value = ""
-        // this.disableLoginFields()
       })
     } else {
       alert(`${name} is an existing trainer. Please try again or login!`)
@@ -66,11 +59,6 @@ class Trainers {
       })
       .then(() => {
         this.setTrainer()
-        // this.trainer.renderTrainer()
-        // this.trainer.renderTrainersPokemons(this.entries)
-        // this.entries.enableFields()
-        // this.loginField.value = ""
-        // this.disableLoginFields()
       })
     } else {
       alert(`${value} is not an existing trainer. Please try again or create a new trainer!`)
