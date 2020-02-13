@@ -43,7 +43,7 @@ class Trainers {
         this.renderTrainer()
       })
     } else {
-      console.log("Who dis?")
+      alert(`${value} is not an existing trainer. Please try again or create a new trainer!`)
     }
 
   }
