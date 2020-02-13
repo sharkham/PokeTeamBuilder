@@ -11,6 +11,7 @@ class Trainers {
     this.div = document.getElementById("trainer-view")
     // this.h2 = document.getElementById("trainername")
     this.loginField = document.getElementById("trainerlogin")
+    this.loginSubmit = document.getElementById("submitlogin")
     this.login = document.getElementById("login")
     this.login.addEventListener("submit", this.fetchAndLoginTrainer.bind(this))
   }
@@ -39,10 +40,17 @@ class Trainers {
         this.trainer.renderTrainer()
         this.trainer.renderTrainersPokemons(this.entries)
         this.entries.enableFields()
+        this.loginField.value = ""
+        this.disableLoginFields()
       })
     } else {
       alert(`${value} is not an existing trainer. Please try again or create a new trainer!`)
     }
+  }
+
+  disableLoginFields() {
+    this.loginField.setAttribute("disabled", "true")
+    this.loginSubmit.setAttribute("disabled", "true")
   }
 
   // renderPokemons() {
