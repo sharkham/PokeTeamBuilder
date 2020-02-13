@@ -1,6 +1,6 @@
 class Trainers {
   constructor(entries){
-    // this.trainer = ""
+    this.trainers = []
     this.adapter = new TrainersAdapter()
     this.initBindingsAndEventListeners()
     this.fetchAndLoadTrainers()
@@ -14,26 +14,48 @@ class Trainers {
   initBindingsAndEventListeners() {
     this.div = document.getElementById("trainer-view")
     this.h2 = document.getElementById("trainername")
-    this.trainerLogin = document.getElementById("trainerlogin")
+    this.loginField = document.getElementById("trainerlogin")
     this.login = document.getElementById("login")
     this.login.addEventListener("submit", this.fetchAndLoginTrainer.bind(this))
-    // this.login.addEventListener("submit", (e) => {
-    //   // console.log("hello!")
-    //   this.fetchAndLoginTrainer(e)
-    //   e.preventDefault()
-    // })
   }
+
+  fetchAndLoadTrainers() {
+    this.adapter.getTrainers()
+    .then(trainers => {
+      trainers.forEach(trainer => this.trainers.push(trainer))
+    })
+    .then(() => {
+      console.log(this.trainers)
+    })
+  }
+
+  // fetchAndLoadEntries() {
+  //   this.adapter.getEntries()
+  //   .then(entries => {
+  //     entries.forEach(entry => this.entries.push(new Entry(entry)))
+  //   })
+  //   .then(() => {
+  //     this.render()
+  //   })
+  // }
+
+  // findTrainer(trainer, value) {
+  //   trainer.name === value
+  // }
 
   fetchAndLoginTrainer(e) {
     e.preventDefault()
-    const value = this.trainerLogin.value
-    console.log(value)
-    this.adapter.getTrainer(value)
+    const value = this.loginField.value
+    //iterate over this.trainers and find object where value is name.
+    const trainerObj = this.trainers.find(trainer => trainer.name === value)
+    // const trainerId = this.trainers.find(({name}) => { name === value })
+    const trainerId = trainerObj.id
+    this.adapter.getTrainer(trainerId)
     .then(trainer => {
       this.trainer = new Trainer(trainer)
     })
     .then(() => {
-      this.render()
+      this.renderTrainer()
     })
     // console.log(value)
     // this.adapter.getTrainer(1)
@@ -43,11 +65,11 @@ class Trainers {
     //   // trainers.forEach(entry => this.trainers.push(new Entry(entry)))
     // })
     // .then(() => {
-    //   this.render()
+    //   this.renderTrainer()
     // })
   }
 
-  render() {
+  renderTrainer() {
     // let h2 = document.createElement("h2")
     this.h2.innerText = this.trainer.name
     this.h2.setAttribute("id", "trainername")
