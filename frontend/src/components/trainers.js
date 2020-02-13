@@ -38,6 +38,7 @@ class Trainers {
       .then(() => {
         this.trainer.renderTrainer()
         this.trainer.renderTrainersPokemons(this.entries)
+        this.entries.enableFields()
       })
     } else {
       alert(`${value} is not an existing trainer. Please try again or create a new trainer!`)
