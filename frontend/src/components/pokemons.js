@@ -15,24 +15,28 @@ class Pokemons {
     document.getElementsByTagName("H1")[0].getAttribute("class");
     // //find the trainer from id put on page??
     this.form = document.getElementById("poke-select-form")
-    this.form.addEventListener("change", this.createPokemon.bind(this))
+    this.form.addEventListener("change", this.createOrUpdatePokemon.bind(this))
     this.view = document.getElementById("view-box")
     //createPokemon here needs to change to a function that will create or post based on whether a Pokémon exists or not.
     //binding this here makes "this" the pokemons class so it can be used in createPokemon function
   }
 
-  createPokemon(e) {
-    let boxNumber = e.target.id[e.target.id.length-1]
-    let trainerString = document.getElementById("trainername").getAttribute("trainerid")
-    this.trainerId = parseInt(trainerString, 10)
-    //need to make sure it:
-    //creates pokemon if none exists
-    //changes pokemon species if it does exist
-    //deletes pokemon if set to blank(?) (might be bonus)
-    const value = e.target.value
-    const pokedexEntry = this.pokedex.entries[value-1]
-    //somehow, get request to api/v1/entries based on value(id), and then use that info to make Pokémon
-    this.adapter.createPokemon(value, this.trainerId, pokedexEntry, boxNumber).then(pokemon => {
+  createOrUpdatePokemon(e) {
+    //iterate through this.pokemons--a "find" for a Pokémon with the boxnumber
+    const boxNumber = parseInt(e.target.id[e.target.id.length-1], 10)
+    const entryNum = e.target.value
+    const pokemonObj = this.pokemons.find(pokemon => pokemon.number === boxNumber)
+    if (!!pokemonObj) {
+      console.log("there is a pokemon in this box!")
+    } else {
+      console.log("there isn't a pokemon in this box yet!")
+      this.createPokemon(entryNum, boxNumber)
+    }
+  }
+
+  createPokemon(entryNum, boxNumber) {
+    const pokedexEntry = this.pokedex.entries[entryNum-1]
+    this.adapter.createPokemon(entryNum, this.trainer.id, pokedexEntry, boxNumber).then(pokemon => {
       this.pokemons.push(pokemon)
       pokemon = new Pokemon(pokemon)
       this.view.innerHTML += pokemon.viewBoxHTML()
