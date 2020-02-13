@@ -10,8 +10,27 @@ class TrainersAdapter {
     })
   }
 
-
   getTrainer(trainerId) {
     return fetch(`${this.baseUrl}/${trainerId}`).then(res => res.json())
+  }
+
+  createTrainer(name) {
+    const trainer = {
+      name: name,
+      image: "image/may.png",
+      //don't hard code this later!
+      height: 16,
+      // xaxis: sizeValues[x],
+      // yaxis: [y],
+      // zindex: [z],
+    }
+    return fetch(this.baseUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({ trainer })
+    }).then(res => res.json())
   }
 }
