@@ -14,7 +14,12 @@ class Pokemon {
     // this.trainer_id =
   }
 
-  renderPokemon(){
-    console.log(this.name)
+  renderPokemonHTML(){
+    return `<img src="${this.image}">`
+    // console.log("hey!")
+    // //this is where to display the image of them but double check how this happens.
+    // let image = document.createElement("img")
+    // image.setAttribute("src", this.image)
+    // console.log(this.name)
   }
 }

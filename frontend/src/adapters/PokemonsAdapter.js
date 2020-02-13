@@ -8,7 +8,7 @@ class PokemonsAdapter {
   // }
 
   createPokemon(value, trainerId, pokedexEntry, boxNumber) {
-    // console.log(value)
+    console.log(value)
     // console.log(trainerId)
     // console.log(pokedexEntry)
     // console.log(pokedex.entries)

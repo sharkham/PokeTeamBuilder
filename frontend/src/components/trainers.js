@@ -4,6 +4,8 @@ class Trainers {
     this.adapter = new TrainersAdapter()
     this.initBindingsAndEventListeners()
     this.fetchAndLoadTrainer()
+    //Gotta make the "fetch and load" part of an event listener on page
+    //make login/signup form
     this.entries = entries
     //this just fires when the thing starts. Going to have to find a way to login/signup first to fire it.
   }
@@ -30,12 +32,13 @@ class Trainers {
     this.h2.innerText = this.trainer.name
     this.h2.setAttribute("id", "trainername")
     this.h2.setAttribute("trainerid", `${this.trainer.id}`)
+    this.pokemons = new Pokemons(this.entries, this.trainer)
     // this.div.appendChild(h2)
-    this.trainer.pokemons.forEach(pokemon => {
-      pokemon = new Pokemon(pokemon)
-      pokemon.renderPokemon()
-      // is this the place for this to be happening?
-    })
+    // this.trainer.pokemons.forEach(pokemon => {
+    //   pokemon = new Pokemon(pokemon)
+    //   pokemon.renderPokemon()
+    //   // is this the place for this to be happening?
+    // })
   }
 
 }

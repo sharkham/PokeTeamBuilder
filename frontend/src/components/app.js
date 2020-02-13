@@ -5,7 +5,7 @@ class App {
     this.trainers = new Trainers(this.entries)
 
     //comment out Pokémons--they will have to be booted up from Trainers when a trainer is created or logged in
-    this.pokemons = new Pokemons(this.entries)
+    // this.pokemons = new Pokemons(this.entries)
     //pokemons needs to load with trainer as well.
   }
 
