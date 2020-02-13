@@ -3,7 +3,7 @@ class Trainers {
     // this.trainer = ""
     this.adapter = new TrainersAdapter()
     this.initBindingsAndEventListeners()
-    this.fetchAndLoadTrainer()
+    // this.fetchAndLoadTrainer()
     //Gotta make the "fetch and load" part of an event listener on page
     //make login/signup form
     this.entries = entries
@@ -13,18 +13,29 @@ class Trainers {
   initBindingsAndEventListeners() {
     this.div = document.getElementById("trainer-view")
     this.h2 = document.getElementById("trainername")
+    this.trainerLogin = document.getElementById("trainerlogin")
+    this.login = document.getElementById("login")
+    this.login.addEventListener("submit", this.fetchAndLoadTrainer.bind(this))
+    // this.login.addEventListener("submit", (e) => {
+    //   // console.log("hello!")
+    //   this.fetchAndLoadTrainer(e)
+    //   e.preventDefault()
+    // })
   }
 
-  fetchAndLoadTrainer() {
-    this.adapter.getTrainer(1)
-    //this (above) should NOT be hardcoded.
-    .then(trainer => {
-      this.trainer = new Trainer(trainer)
-      // trainers.forEach(entry => this.trainers.push(new Entry(entry)))
-    })
-    .then(() => {
-      this.render()
-    })
+  fetchAndLoadTrainer(e) {
+    e.preventDefault()
+    const value = this.trainerLogin.value
+    console.log(value)
+    // this.adapter.getTrainer(1)
+    // //this (above) should NOT be hardcoded.
+    // .then(trainer => {
+    //   this.trainer = new Trainer(trainer)
+    //   // trainers.forEach(entry => this.trainers.push(new Entry(entry)))
+    // })
+    // .then(() => {
+    //   this.render()
+    // })
   }
 
   render() {
