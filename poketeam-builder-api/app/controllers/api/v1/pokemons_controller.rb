@@ -16,7 +16,11 @@ class Api::V1::PokemonsController < ApplicationController
 
   def update
     @pokemon = Pokemon.find(params[:id])
-    @pokemon.update(pokemon_params)
+    if @pokemon.update(pokemon_params)
+      render json: PokemonSerializer.new(@pokemon).to_serialized_json, status: 200
+    else
+      render json: { status: 500 }
+    end
   end
 
 

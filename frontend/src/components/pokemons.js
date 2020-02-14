@@ -28,11 +28,23 @@ class Pokemons {
     const pokemonObj = this.pokemons.find(pokemon => pokemon.number === boxNumber)
     if (!!pokemonObj) {
       console.log("there is a pokemon in this box!")
-      this.updatePokemon(entryNum, boxNumber)
+      this.updatePokemon(pokemonObj, entryNum, boxNumber)
     } else {
       console.log("there isn't a pokemon in this box yet!")
       this.createPokemon(entryNum, boxNumber)
     }
+  }
+
+  updatePokemon(pokemonObj, entryNum, boxNumber) {
+    const pokedexEntry = this.pokedex.entries[entryNum-1]
+    this.adapter.updatePokemon(pokemonObj.id, pokedexEntry).then(pokemon => {
+      console.log(pokemon)
+      console.log(this.trainer.pokemons)
+      // console.log(this.pokemons)
+      //go through array of trainer's pokemon and swap out for new pokemon that gets returned
+      //index_of method in JavaScript index_of old Pokémon object, return that number,
+      //take trainer.pokemons array at that square bracket index and replace it
+    })
   }
 
   createPokemon(entryNum, boxNumber) {
@@ -47,6 +59,8 @@ class Pokemons {
   }
 
   render() {
+    // this.view.innerHTML = ""
+    //clear existing stuff and then re-render
     this.pokemons.forEach(pokemon => {
       pokemon = new Pokemon(pokemon)
       this.view.innerHTML += pokemon.viewBoxHTML()

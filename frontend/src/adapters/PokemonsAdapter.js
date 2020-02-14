@@ -8,11 +8,6 @@ class PokemonsAdapter {
   // }
 
   createPokemon(trainerId, pokedexEntry, boxNumber) {
-    // console.log(value)
-    // console.log(trainerId)
-    // console.log(pokedexEntry)
-    // console.log(pokedex.entries)
-    // const sizeValues = setSizeValues(boxNumber)
     const pokemon = {
       name: pokedexEntry.name,
       number: boxNumber,
@@ -22,8 +17,6 @@ class PokemonsAdapter {
       // yaxis: [y],
       // zindex: [z],
       trainer_id: trainerId
-      //find by id? Or find by name if I change the value
-      //then set all properties here
     }
     return fetch(this.baseUrl, {
       method: "POST",
@@ -33,25 +26,32 @@ class PokemonsAdapter {
       },
       body: JSON.stringify({ pokemon: pokemon })
     }).then(res => res.json())
+    .catch(error => console.error(error))
   }
 
-  updatePokemon(value, trainerId, pokedexEntry, boxNumber) {
+  updatePokemon(pokeId, pokedexEntry) {
     const pokemon = {
       //updated values
       name: pokedexEntry.name,
       image: pokedexEntry.image,
       height: pokedexEntry.height
     }
-    return fetch(this.baseURL, {
+    return fetch(`${this.baseUrl}/${pokeId}`, {
       method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
       body: JSON.stringify({ pokemon: pokemon })
-    })
-
+    }).then(res => {
+      // console.log(res.json())
+      return res.json()
+    }).catch(error => console.error(error))
   }
 
   //helper methods
 
-  // setSizeValues(boxNumber) {
+  // setPositionValues(boxNumber) {
 
 
   //   //return a hash of position values dependent on which box the Pokémon was selected from
