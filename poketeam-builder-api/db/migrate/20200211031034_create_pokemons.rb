@@ -4,6 +4,7 @@ class CreatePokemons < ActiveRecord::Migration[6.0]
       t.string :name
       t.integer :number
       t.string :image
+      t.string :icon
       t.integer :height
       t.integer :xaxis
       t.integer :yaxis

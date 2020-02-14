@@ -17,6 +17,6 @@ class Api::V1::EntriesController < ApplicationController
   private
 
   def entry_params
-    params.require(:entry).permit(:name, :id, :height, :image)
+    params.require(:entry).permit(:name, :id, :height, :image, :icon)
   end
 end

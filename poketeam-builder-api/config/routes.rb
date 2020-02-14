@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :entries
       resources :trainers
       resources :pokemons
+      resources :trainersprites
     end
   end
 

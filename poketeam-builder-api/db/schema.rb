@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_200012) do
+ActiveRecord::Schema.define(version: 2020_02_14_220749) do
 
   create_table "entries", force: :cascade do |t|
     t.string "name"
     t.string "image"
+    t.string "icon"
     t.integer "height"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_200012) do
     t.string "name"
     t.integer "number"
     t.string "image"
+    t.string "icon"
     t.integer "height"
     t.integer "xaxis"
     t.integer "yaxis"
@@ -43,6 +45,10 @@ ActiveRecord::Schema.define(version: 2020_02_11_200012) do
     t.integer "zindex"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trainersprites", force: :cascade do |t|
+    t.string "image"
   end
 
   add_foreign_key "pokemons", "trainers"
