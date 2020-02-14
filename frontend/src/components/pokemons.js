@@ -37,9 +37,10 @@ class Pokemons {
 
   updatePokemon(pokemonObj, entryNum, boxNumber) {
     const pokedexEntry = this.pokedex.entries[entryNum-1]
-    this.adapter.updatePokemon(pokemonObj.id, pokedexEntry).then(pokemon => {
-      console.log(pokemon)
-      console.log(this.trainer.pokemons)
+    this.adapter.updatePokemon(pokemonObj.id, pokedexEntry).then(pokemonObj => {
+      // console.log(pokemonObj)
+      // console.log(this.trainer.pokemons)
+      this.trainer.updateTrainersPokemons(pokemonObj)
       // console.log(this.pokemons)
       //go through array of trainer's pokemon and swap out for new pokemon that gets returned
       //index_of method in JavaScript index_of old Pokémon object, return that number,
