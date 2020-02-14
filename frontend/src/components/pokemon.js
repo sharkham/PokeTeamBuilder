@@ -4,7 +4,7 @@ class Pokemon {
     this.name = entryJSON.name
     this.image = entryJSON.image
     this.height = entryJSON.height
-
+    this.number = entryJSON.number
     //set these to defaults on render, somehow depending on which select they come from
     // this.xaxis =
     // this.yaxis =
@@ -15,7 +15,11 @@ class Pokemon {
   }
 
   viewBoxHTML(){
-    return `<img src="${this.image}">`
+    const image = document.createElement("img")
+    image.setAttribute("src", this.image)
+    image.setAttribute("id", `pokesprite${this.number}`)
+    return image
+    // return `<img src="${this.image}">`
     // console.log("hey!")
     // //this is where to display the image of them but double check how this happens.
     // let image = document.createElement("img")

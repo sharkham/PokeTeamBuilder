@@ -53,7 +53,8 @@ class Pokemons {
     this.adapter.createPokemon(this.trainer.id, pokedexEntry, boxNumber).then(pokemon => {
       this.pokemons.push(pokemon)
       pokemon = new Pokemon(pokemon)
-      this.view.innerHTML += pokemon.viewBoxHTML()
+      this.view.appendChild(pokemon.viewBoxHTML())
+      // this.view.innerHTML += pokemon.viewBoxHTML()
       // console.log(this.pokemons)
       // pokemon.renderPokemonInViewBox()
     })
@@ -64,7 +65,8 @@ class Pokemons {
     //clear existing stuff and then re-render
     this.pokemons.forEach(pokemon => {
       pokemon = new Pokemon(pokemon)
-      this.view.innerHTML += pokemon.viewBoxHTML()
+      this.view.appendChild(pokemon.viewBoxHTML())
+      // this.view.innerHTML += pokemon.viewBoxHTML()
       // is this the place for this to be happening?
     })
   }
