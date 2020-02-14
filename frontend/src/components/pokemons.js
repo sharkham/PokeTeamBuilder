@@ -37,15 +37,17 @@ class Pokemons {
 
   updatePokemon(pokemonObj, entryNum, boxNumber) {
     const pokedexEntry = this.pokedex.entries[entryNum-1]
-    this.adapter.updatePokemon(pokemonObj.id, pokedexEntry).then(pokemonObj => {
+    this.adapter.updatePokemon(pokemonObj.id, pokedexEntry).then(pokemon => {
+
       // console.log(pokemonObj)
       // console.log(this.trainer.pokemons)
-      this.trainer.updateTrainersPokemons(pokemonObj)
+      this.trainer.updateTrainersPokemons(pokemon)
+      pokemon = new Pokemon(pokemon)
       //find image by box number and replace image
       const pokeSprite = document.getElementById(`pokesprite${boxNumber}`)
-      pokeSprite.setAttribute("src", pokemonObj.image)
-      console.log(pokeSprite)
-
+      pokeSprite.setAttribute("src", pokemon.image)
+      // console.log(pokemon)
+      pokemon.renderPokemonInControlBox()
       // console.log(this.pokemons)
       //go through array of trainer's pokemon and swap out for new pokemon that gets returned
       //index_of method in JavaScript index_of old Pokémon object, return that number,
@@ -58,7 +60,8 @@ class Pokemons {
     this.adapter.createPokemon(this.trainer.id, pokedexEntry, boxNumber).then(pokemon => {
       this.pokemons.push(pokemon)
       pokemon = new Pokemon(pokemon)
-      this.view.appendChild(pokemon.viewBoxHTML())
+      this.view.appendChild(pokemon.viewBoxSprite())
+      pokemon.renderPokemonInControlBox()
       // this.view.innerHTML += pokemon.viewBoxHTML()
       // console.log(this.pokemons)
       // pokemon.renderPokemonInViewBox()
@@ -70,9 +73,12 @@ class Pokemons {
     //clear existing stuff and then re-render
     this.pokemons.forEach(pokemon => {
       pokemon = new Pokemon(pokemon)
-      this.view.appendChild(pokemon.viewBoxHTML())
+      this.view.appendChild(pokemon.viewBoxSprite())
+      // pokemon.renderPokemonInControlBox()
       // this.view.innerHTML += pokemon.viewBoxHTML()
       // is this the place for this to be happening?
     })
   }
 }
+
+//rendering the Pokémon is not DRY here

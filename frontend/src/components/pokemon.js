@@ -14,7 +14,7 @@ class Pokemon {
     // this.trainer_id =
   }
 
-  viewBoxHTML(){
+  viewBoxSprite(){
     const image = document.createElement("img")
     image.setAttribute("src", this.image)
     image.setAttribute("id", `pokesprite${this.number}`)
@@ -25,5 +25,14 @@ class Pokemon {
     // let image = document.createElement("img")
     // image.setAttribute("src", this.image)
     // console.log(this.name)
+  }
+
+  renderPokemonInControlBox() {
+    const controlBoxDiv = document.getElementById(`control-poke-${this.number}`)
+    controlBoxDiv.innerHTML = `<img src="${this.image}" class="controlboxicon">`
+    // const image = document.createElement("img")
+    // image.setAttribute("src", this.image)
+    //change to this.icon later
+    // image.setAttribute("class", "controlboxicon")
   }
 }
