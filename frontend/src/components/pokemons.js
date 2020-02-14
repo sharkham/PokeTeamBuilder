@@ -74,7 +74,7 @@ class Pokemons {
     this.pokemons.forEach(pokemon => {
       pokemon = new Pokemon(pokemon)
       this.view.appendChild(pokemon.viewBoxSprite())
-      // pokemon.renderPokemonInControlBox()
+      pokemon.renderPokemonInControlBox()
       // this.view.innerHTML += pokemon.viewBoxHTML()
       // is this the place for this to be happening?
     })
