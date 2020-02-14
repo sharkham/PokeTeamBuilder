@@ -8,7 +8,6 @@ class Entries {
   }
 
   initBindingsAndEventListeners() {
-    // this.selectMenu = document.getElementById("select-menu")
     this.form = document.getElementById("poke-select-form")
   }
 

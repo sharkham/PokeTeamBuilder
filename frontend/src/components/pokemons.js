@@ -12,7 +12,7 @@ class Pokemons {
   }
 
   initBindingsAndEventListeners() {
-    document.getElementsByTagName("H1")[0].getAttribute("class");
+    document.getElementsByTagName("H1")[0].getAttribute("class")
     // //find the trainer from id put on page??
     this.form = document.getElementById("poke-select-form")
     this.form.addEventListener("change", this.createOrUpdatePokemon.bind(this))
@@ -41,6 +41,11 @@ class Pokemons {
       // console.log(pokemonObj)
       // console.log(this.trainer.pokemons)
       this.trainer.updateTrainersPokemons(pokemonObj)
+      //find image by box number and replace image
+      const pokeSprite = document.getElementById(`pokesprite${boxNumber}`)
+      pokeSprite.setAttribute("src", pokemonObj.image)
+      console.log(pokeSprite)
+
       // console.log(this.pokemons)
       //go through array of trainer's pokemon and swap out for new pokemon that gets returned
       //index_of method in JavaScript index_of old Pokémon object, return that number,
