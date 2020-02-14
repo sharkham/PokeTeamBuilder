@@ -3,6 +3,7 @@ class Pokemon {
     this.id = entryJSON.id
     this.name = entryJSON.name
     this.image = entryJSON.image
+    this.icon = entryJSON.icon
     this.height = entryJSON.height
     this.number = entryJSON.number
     //set these to defaults on render, somehow depending on which select they come from
@@ -29,7 +30,7 @@ class Pokemon {
 
   renderPokemonInControlBox() {
     const controlBoxDiv = document.getElementById(`control-poke-${this.number}`)
-    controlBoxDiv.innerHTML = `<img src="${this.image}" class="controlboxicon">`
+    controlBoxDiv.innerHTML = `<img src="${this.icon}" class="controlboxicon">`
     // const image = document.createElement("img")
     // image.setAttribute("src", this.image)
     //change to this.icon later

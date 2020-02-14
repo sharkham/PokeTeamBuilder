@@ -12,6 +12,7 @@ class PokemonsAdapter {
       name: pokedexEntry.name,
       number: boxNumber,
       image: pokedexEntry.image,
+      icon: pokedexEntry.icon,
       height: pokedexEntry.height,
       // xaxis: sizeValues[x],
       // yaxis: [y],
@@ -34,6 +35,7 @@ class PokemonsAdapter {
       //updated values
       name: pokedexEntry.name,
       image: pokedexEntry.image,
+      icon: pokedexEntry.icon,
       height: pokedexEntry.height
     }
     return fetch(`${this.baseUrl}/${pokeId}`, {

@@ -27,10 +27,8 @@ class Pokemons {
     const entryNum = e.target.value
     const pokemonObj = this.pokemons.find(pokemon => pokemon.number === boxNumber)
     if (!!pokemonObj) {
-      console.log("there is a pokemon in this box!")
       this.updatePokemon(pokemonObj, entryNum, boxNumber)
     } else {
-      console.log("there isn't a pokemon in this box yet!")
       this.createPokemon(entryNum, boxNumber)
     }
   }

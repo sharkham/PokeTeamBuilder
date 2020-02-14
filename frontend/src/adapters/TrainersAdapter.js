@@ -17,8 +17,8 @@ class TrainersAdapter {
   createTrainer(name) {
     const trainer = {
       name: name,
-      image: "image/may.png",
-      //don't hard code this later!
+      image: "images/trainersprites/34.png",
+      //don't hard code this later! OR hardcode defauly only
       height: 16,
       // xaxis: sizeValues[x],
       // yaxis: [y],
