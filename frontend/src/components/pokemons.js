@@ -70,12 +70,12 @@ class Pokemons {
   render() {
     // this.view.innerHTML = ""
     //clear existing stuff and then re-render
-    console.log(this.pokemons)
+    // console.log(this.pokemons)
     this.pokemons.forEach(pokemon => {
       pokemon = new Pokemon(pokemon)
       this.view.appendChild(pokemon.viewBoxSprite())
       let testVar = document.getElementById(`pokesprite${pokemon.number}`)
-      console.log(testVar.clientHeight)
+      // console.log(testVar.clientHeight)
       pokemon.renderPokemonInControlBox()
       // this.view.innerHTML += pokemon.viewBoxHTML()
       // is this the place for this to be happening?

@@ -22,7 +22,6 @@ class Trainersprites {
   }
 
   render() {
-    console.log("working")
     let select = document.createElement("select")
     select.setAttribute("id", "trainerspriteselect")
     select.setAttribute("disabled", "true")

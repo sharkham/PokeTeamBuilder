@@ -33,4 +33,22 @@ class TrainersAdapter {
       body: JSON.stringify({ trainer })
     }).then(res => res.json())
   }
+
+  updateTrainer(trainerId, sprite) {
+    const trainer = {
+      image: sprite.image
+    }
+    return fetch(`${this.baseUrl}/${trainerId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({ trainer: trainer })
+    }).then(res => {
+      // console.log(res.json())
+      return res.json()
+    }).catch(error => console.error(error))
+  }
+
 }
