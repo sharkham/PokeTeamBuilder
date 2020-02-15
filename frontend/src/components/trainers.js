@@ -96,6 +96,10 @@ class Trainers {
     const sprite = this.trainersprites.trainersprites[spriteNum-1]
     console.log(sprite)
     this.adapter.updateTrainer(this.trainer.id, sprite).then(trainer => {
+      const trainerSprite = document.getElementById("trainersprite")
+      trainerSprite.setAttribute("src", trainer.image)
+      trainer = new Trainer(trainer)
+      trainer.renderTrainerInControlBox()
       // const pokeSprite = document.getElementById(`pokesprite${boxNumber}`)
       // pokeSprite.setAttribute("src", pokemon.image)
       // pokemon.setSpriteHeight(pokeSprite)

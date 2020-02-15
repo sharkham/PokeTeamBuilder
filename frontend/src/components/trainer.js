@@ -28,7 +28,7 @@ class Trainer {
   }
 
   renderTrainerInViewBox() {
-    this.view.innerHTML += `<img src="${this.image}">`
+    this.view.innerHTML += `<img src="${this.image}" id="trainersprite">`
   }
 
   renderTrainerInControlBox() {
