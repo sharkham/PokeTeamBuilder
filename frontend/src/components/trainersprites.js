@@ -8,7 +8,7 @@ class Trainersprites {
   }
 
   initBindingsAndEventListeners() {
-    this.form = document.getElementById("poke-select-form")
+    this.form = document.getElementById("trainer-select-form")
   }
 
   fetchAndLoadTrainersprites() {
