@@ -1,5 +1,6 @@
 class App {
   constructor(){
+    this.trainersprites = new Trainersprites()
     this.entries = new Entries()
     // console.log(this.entries)
     this.trainers = new Trainers(this.entries)
