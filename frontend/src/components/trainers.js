@@ -1,11 +1,11 @@
 class Trainers {
-  constructor(entries){
+  constructor(entries, trainersprites){
     this.trainers = []
     this.adapter = new TrainersAdapter()
     this.initBindingsAndEventListeners()
     this.fetchAndLoadTrainers()
     this.entries = entries
-    // this.trainersprites = trainersprites
+    this.trainersprites = trainersprites
 
 
   }
@@ -72,7 +72,7 @@ class Trainers {
     this.trainer.renderTrainer()
     this.trainer.renderTrainersPokemons(this.entries)
     this.entries.enableFields()
-    // this.trainersprites.enableField()
+    this.trainersprites.enableField()
     this.signupField.value = ""
     this.disableSignupFields()
     this.loginField.value = ""
