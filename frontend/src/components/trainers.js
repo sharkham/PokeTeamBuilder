@@ -1,11 +1,11 @@
 class Trainers {
-  constructor(entries, trainersprites){
+  constructor(entries){
     this.trainers = []
     this.adapter = new TrainersAdapter()
     this.initBindingsAndEventListeners()
     this.fetchAndLoadTrainers()
     this.entries = entries
-    this.trainersprites = trainersprites
+    // this.trainersprites = trainersprites
 
 
   }

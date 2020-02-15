@@ -4,7 +4,7 @@ class App {
     this.entries = new Entries()
     // this.trainersprites = new Trainersprites()
     // console.log(this.entries)
-    this.trainers = new Trainers(this.entries, this.trainersprites)
+    this.trainers = new Trainers(this.entries)
 
     //comment out Pokémons--they will have to be booted up from Trainers when a trainer is created or logged in
     // this.pokemons = new Pokemons(this.entries)

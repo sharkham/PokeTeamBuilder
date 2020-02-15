@@ -31,6 +31,7 @@ class Pokemon {
 
   renderPokemonInControlBox() {
     const controlBoxDiv = document.getElementById(`control-poke-${this.number}`)
+    console.log(controlBoxDiv)
     controlBoxDiv.innerHTML = `<img src="${this.icon}" class="controlboxicon">`
     // const image = document.createElement("img")
     // image.setAttribute("src", this.image)
