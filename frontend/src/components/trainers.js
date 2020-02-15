@@ -14,7 +14,6 @@ class Trainers {
     this.div = document.getElementById("trainer-view")
     this.form = document.getElementById("trainer-select-form")
     this.form.addEventListener("change", this.updateTrainer.bind(this))
-    // this.h2 = document.getElementById("trainername")
     this.loginField = document.getElementById("trainerlogin")
     this.loginSubmit = document.getElementById("submitlogin")
     this.login = document.getElementById("login")
@@ -31,7 +30,7 @@ class Trainers {
       trainers.forEach(trainer => this.trainers.push(trainer))
     })
     .then(() => {
-      // console.log(this.trainers)
+
     })
   }
 
@@ -94,50 +93,13 @@ class Trainers {
   updateTrainer(e) {
     const spriteNum = e.target.value
     const sprite = this.trainersprites.trainersprites[spriteNum-1]
-    console.log(sprite)
     this.adapter.updateTrainer(this.trainer.id, sprite).then(trainer => {
       const trainerSprite = document.getElementById("trainersprite")
       trainerSprite.setAttribute("src", trainer.image)
       trainer = new Trainer(trainer)
       trainer.renderTrainerInControlBox()
-      // const pokeSprite = document.getElementById(`pokesprite${boxNumber}`)
-      // pokeSprite.setAttribute("src", pokemon.image)
-      // pokemon.setSpriteHeight(pokeSprite)
-
-      // pokemon.renderPokemonInControlBox()
     })
-    console.log(spriteNum)
   }
 
-  // updatePokemon(pokemonObj, entryNum, boxNumber) {
-  //   const pokedexEntry = this.pokedex.entries[entryNum-1]
-  //   this.adapter.updatePokemon(pokemonObj.id, pokedexEntry).then(pokemon => {
-
-  //     // console.log(pokemonObj)
-  //     // console.log(this.trainer.pokemons)
-  //     this.trainer.updateTrainersPokemons(pokemon)
-  //     pokemon = new Pokemon(pokemon)
-  //     //find image by box number and replace image
-  //     const pokeSprite = document.getElementById(`pokesprite${boxNumber}`)
-  //     pokeSprite.setAttribute("src", pokemon.image)
-  //     pokemon.setSpriteHeight(pokeSprite)
-  //     // console.log(pokemon)
-  //     pokemon.renderPokemonInControlBox()
-  //     // console.log(this.pokemons)
-  //     //go through array of trainer's pokemon and swap out for new pokemon that gets returned
-  //     //index_of method in JavaScript index_of old Pokémon object, return that number,
-  //     //take trainer.pokemons array at that square bracket index and replace it
-  //   })
-  // }
-  // renderPokemons() {
-  //   this.pokemons = new Pokemons(this.entries, this.trainer)
-  // }
-
-  // renderTrainer() {
-  //   this.h2.innerText = this.trainer.name
-  //   this.h2.setAttribute("id", "trainername")
-  //   this.h2.setAttribute("trainerid", `${this.trainer.id}`)
-  //   this.pokemons = new Pokemons(this.entries, this.trainer)
-  // }
 
 }

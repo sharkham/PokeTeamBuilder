@@ -42,25 +42,7 @@ class Trainer {
   }
 
   updateTrainersPokemons(pokemonObj) {
-    // console.log(pokemonObj)
-    // console.log(this.pokemons.pokemons)
-    // this.pokemons.forEach(pokemon => {
-    //   console.log(pokemon)
-    // })
-    console.log(this.pokemons)
     const indexToUpdate = this.pokemons.findIndex(pokemon => pokemon.number === pokemonObj.number)
     this.pokemons[indexToUpdate] = pokemonObj
-    console.log(this.pokemons)
-
-    // const pokemonObj = this.pokemons.find(pokemon => pokemon.number === boxNumber)
-
   }
-
-  // renderTrainer(){
-  //   let h2 = document.createElement("h2")
-  //   h2.innerText = this.name
-  //   h2.setAttribute("trainerId", `${this.id}`)
-  //   this.div.appendChild(h2)
-  //   console.log(this.pokemons)
-  // }
 }

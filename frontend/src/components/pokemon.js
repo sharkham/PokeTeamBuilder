@@ -21,22 +21,11 @@ class Pokemon {
     image.setAttribute("id", `pokesprite${this.number}`)
     this.setSpriteHeight(image)
     return image
-    // return `<img src="${this.image}">`
-    // console.log("hey!")
-    // //this is where to display the image of them but double check how this happens.
-    // let image = document.createElement("img")
-    // image.setAttribute("src", this.image)
-    // console.log(this.name)
   }
 
   renderPokemonInControlBox() {
     const controlBoxDiv = document.getElementById(`control-poke-${this.number}`)
-    console.log(controlBoxDiv)
     controlBoxDiv.innerHTML = `<img src="${this.icon}" class="controlboxicon">`
-    // const image = document.createElement("img")
-    // image.setAttribute("src", this.image)
-    //change to this.icon later
-    // image.setAttribute("class", "controlboxicon")
   }
 
   setSpriteHeight(image) {
