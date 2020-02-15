@@ -44,6 +44,7 @@ class Pokemons {
       //find image by box number and replace image
       const pokeSprite = document.getElementById(`pokesprite${boxNumber}`)
       pokeSprite.setAttribute("src", pokemon.image)
+      pokemon.setSpriteHeight(pokeSprite)
       // console.log(pokemon)
       pokemon.renderPokemonInControlBox()
       // console.log(this.pokemons)
@@ -72,6 +73,8 @@ class Pokemons {
     this.pokemons.forEach(pokemon => {
       pokemon = new Pokemon(pokemon)
       this.view.appendChild(pokemon.viewBoxSprite())
+      let testVar = document.getElementById(`pokesprite${pokemon.number}`)
+      console.log(testVar.clientHeight)
       pokemon.renderPokemonInControlBox()
       // this.view.innerHTML += pokemon.viewBoxHTML()
       // is this the place for this to be happening?

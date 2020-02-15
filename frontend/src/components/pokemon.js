@@ -19,6 +19,7 @@ class Pokemon {
     const image = document.createElement("img")
     image.setAttribute("src", this.image)
     image.setAttribute("id", `pokesprite${this.number}`)
+    this.setSpriteHeight(image)
     return image
     // return `<img src="${this.image}">`
     // console.log("hey!")
@@ -35,5 +36,11 @@ class Pokemon {
     // image.setAttribute("src", this.image)
     //change to this.icon later
     // image.setAttribute("class", "controlboxicon")
+  }
+
+  setSpriteHeight(image) {
+    image.style.height = `${(this.height * 57)/15}px`
+    // const size = (this.height * 57)/15
+    // return `${(this.height * 57)/15}px`
   }
 }
