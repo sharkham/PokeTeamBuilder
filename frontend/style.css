@@ -24,9 +24,11 @@
   align-items: center;
 }
 
-/* #view-box {
 
-} */
+#view-box {
+  height: 60vh;
+  width: 800px;
+}
 /* .wrapper {
   display: grid;
   grid-template-columns: 100px 100px 100px;
