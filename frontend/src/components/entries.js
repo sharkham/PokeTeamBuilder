@@ -1,7 +1,7 @@
 class Entries {
   constructor(){
     this.entries = []
-    this.selectFields = []
+    // this.selectFields = []
     this.adapter = new EntriesAdapter()
     this.initBindingsAndEventListeners()
     this.fetchAndLoadEntries()
@@ -9,6 +9,7 @@ class Entries {
 
   initBindingsAndEventListeners() {
     this.form = document.getElementById("poke-select-form")
+    this.selectFields = Array.from(document.querySelectorAll("select.pokeselect"))
   }
 
 
@@ -24,18 +25,28 @@ class Entries {
 
   render() {
     //make a select form full of each Pokémon.
-    for (let i = 0; i < 6; i++) {
-      // let form = document.createElement("form")
-      let select = document.createElement("select")
+    // let selects = document.querySelectorAll("select.pokeselect")
+    console.log(this.selectFields)
+    for (let i = 0; i < this.selectFields.length; i++) {
+      let select = this.selectFields[i]
       select.setAttribute("id", `poke${i + 1}`)
-      select.setAttribute("disabled", "true")
-      this.selectFields.push(select)
       this.entries.forEach(entry => {
         select.options[select.options.length] = new Option(`${entry.name}`, `${entry.id}`, false, false)
       })
-      // this.selectMenu.appendChild(form)
-      this.form.appendChild(select)
     }
+    // old way of doing it:
+    // for (let i = 0; i < 6; i++) {
+    //   // let form = document.createElement("form")
+    //   let select = document.createElement("select")
+    //   select.setAttribute("id", `poke${i + 1}`)
+    //   select.setAttribute("disabled", "true")
+    //   this.selectFields.push(select)
+    //   this.entries.forEach(entry => {
+    //     select.options[select.options.length] = new Option(`${entry.name}`, `${entry.id}`, false, false)
+    //   })
+    //   // this.selectMenu.appendChild(form)
+    //   this.form.appendChild(select)
+    // }
   }
 
   enableFields() {
