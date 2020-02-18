@@ -1,5 +1,37 @@
-/* .grid-me {
+.grid-six {
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.grid-master {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+}
+
+.grid-one {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.pokecontrol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .wrapper {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+} */
+/* .grid {
+  display: grid;
+  width: 800px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(2, 150px);
+  grid-gap: 1rem;
 } */

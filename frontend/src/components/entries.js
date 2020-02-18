@@ -30,6 +30,7 @@ class Entries {
     for (let i = 0; i < this.selectFields.length; i++) {
       let select = this.selectFields[i]
       select.setAttribute("id", `poke${i + 1}`)
+      // select.options = new Option(" ", " ", false, false)
       this.entries.forEach(entry => {
         select.options[select.options.length] = new Option(`${entry.name}`, `${entry.id}`, false, false)
       })
