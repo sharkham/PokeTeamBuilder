@@ -1,21 +1,22 @@
-.grid-master {
+/* .grid-master {
   display: grid;
   grid-template-columns: 1fr 6fr;
   width: 800px;
-}
+} */
 
-.grid-six {
+.grid-seven {
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
+  width: 800px;
 }
 
-.grid-one {
+/* .grid-one {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;
-}
+} */
 
 .pokecontrol {
   display: flex;

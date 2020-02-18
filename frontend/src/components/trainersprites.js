@@ -8,7 +8,8 @@ class Trainersprites {
   }
 
   initBindingsAndEventListeners() {
-    this.form = document.getElementById("trainer-select-form")
+    this.form = document.getElementById("select-form")
+    this.trainerselect = document.getElementById("trainerspriteselect")
   }
 
   fetchAndLoadTrainersprites() {
@@ -22,15 +23,15 @@ class Trainersprites {
   }
 
   render() {
-    let select = document.createElement("select")
-    select.setAttribute("id", "trainerspriteselect")
-    select.setAttribute("disabled", "true")
+    // let select = document.createElement("select")
+    // select.setAttribute("id", "trainerspriteselect")
+    // select.setAttribute("disabled", "true")
     // this.selectFields.push(select)
     this.trainersprites.forEach(trainersprite => {
-      select.options[select.options.length] = new Option(`${trainersprite.id}`, `${trainersprite.id}`, false, false)
+      this.trainerselect.options[this.trainerselect.options.length] = new Option(`${trainersprite.id}`, `${trainersprite.id}`, false, false)
     })
     // this.selectMenu.appendChild(form)
-    this.form.appendChild(select)
+    // this.form.appendChild(select)
   }
 
   enableField() {

@@ -12,7 +12,7 @@ class Trainers {
 
   initBindingsAndEventListeners() {
     this.div = document.getElementById("trainer-view")
-    this.form = document.getElementById("trainer-select-form")
+    this.form = document.getElementById("select-form")
     this.form.addEventListener("change", this.updateTrainer.bind(this))
     this.loginField = document.getElementById("trainerlogin")
     this.loginSubmit = document.getElementById("submitlogin")
@@ -91,14 +91,17 @@ class Trainers {
   }
 
   updateTrainer(e) {
-    const spriteNum = e.target.value
-    const sprite = this.trainersprites.trainersprites[spriteNum-1]
-    this.adapter.updateTrainer(this.trainer.id, sprite).then(trainer => {
-      const trainerSprite = document.getElementById("trainersprite")
-      trainerSprite.setAttribute("src", trainer.image)
-      trainer = new Trainer(trainer)
-      trainer.renderTrainerInControlBox()
-    })
+    if (e.target.className === "trainerselect") {
+      const spriteNum = e.target.value
+      const sprite = this.trainersprites.trainersprites[spriteNum-1]
+      this.adapter.updateTrainer(this.trainer.id, sprite).then(trainer => {
+        const trainerSprite = document.getElementById("trainersprite")
+        trainerSprite.setAttribute("src", trainer.image)
+        trainer = new Trainer(trainer)
+        trainer.renderTrainerInControlBox()
+      })
+    }
+
   }
 
 

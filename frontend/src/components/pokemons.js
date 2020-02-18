@@ -14,7 +14,7 @@ class Pokemons {
   initBindingsAndEventListeners() {
     document.getElementsByTagName("H1")[0].getAttribute("class")
     // //find the trainer from id put on page??
-    this.form = document.getElementById("poke-select-form")
+    this.form = document.getElementById("select-form")
     this.form.addEventListener("change", this.createOrUpdatePokemon.bind(this))
     this.view = document.getElementById("view-box")
     //createPokemon here needs to change to a function that will create or post based on whether a Pokémon exists or not.
