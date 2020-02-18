@@ -23,14 +23,18 @@ class Pokemons {
 
   createOrUpdatePokemon(e) {
     //iterate through this.pokemons--a "find" for a Pokémon with the boxnumber
-    const boxNumber = parseInt(e.target.id[e.target.id.length-1], 10)
-    const entryNum = e.target.value
-    const pokemonObj = this.pokemons.find(pokemon => pokemon.number === boxNumber)
-    if (!!pokemonObj) {
-      this.updatePokemon(pokemonObj, entryNum, boxNumber)
-    } else {
-      this.createPokemon(entryNum, boxNumber)
+    if (e.target.className === "pokeselect") {
+      const boxNumber = parseInt(e.target.id[e.target.id.length-1], 10)
+      const entryNum = e.target.value
+      const pokemonObj = this.pokemons.find(pokemon => pokemon.number === boxNumber)
+      if (!!pokemonObj) {
+        this.updatePokemon(pokemonObj, entryNum, boxNumber)
+      } else {
+        this.createPokemon(entryNum, boxNumber)
+      }
     }
+    // console.log(e.target)
+
   }
 
   updatePokemon(pokemonObj, entryNum, boxNumber) {
