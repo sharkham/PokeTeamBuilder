@@ -17,8 +17,35 @@ class Pokemons {
     this.form = document.getElementById("select-form")
     this.form.addEventListener("change", this.createOrUpdatePokemon.bind(this))
     this.view = document.getElementById("view-box")
+    this.view.addEventListener("dragstart", this.onDragStart.bind(this))
+    this.view.addEventListener("dragend", this.onDragDrop.bind(this))
     //createPokemon here needs to change to a function that will create or post based on whether a Pokémon exists or not.
     //binding this here makes "this" the pokemons class so it can be used in createPokemon function
+  }
+
+  onDragStart(e) {
+    //abstract this into a helper method somehow so code isn't repeated between trainers and Pokémon?
+    if (e.target.id.includes("pokesprite")) {
+      console.log(e.target)
+      let xPos = e.target.offsetTop
+      // let yPos = e.target.offset.top
+      console.log(xPos)
+      // console.log(yPos)
+    }
+    // console.log("drag start")
+  }
+
+  onDragDrop(e) {
+    e.preventDefault()
+    if (e.target.id.includes("pokesprite")) {
+      // console.log(e.screenX)
+      e.target.style.position = "absolute"
+      e.target.style.top = `${e.screenX}px`
+      console.log(e.target.style.top)
+      // let yPos = e.target.offset.top
+      // console.log(e.screenY)
+      // console.log(yPos)
+    }
   }
 
   createOrUpdatePokemon(e) {
