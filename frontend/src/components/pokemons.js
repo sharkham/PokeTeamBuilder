@@ -18,73 +18,53 @@ class Pokemons {
     this.form.addEventListener("change", this.createOrUpdatePokemon.bind(this))
     this.view = document.getElementById("view-box")
     //moving Pokémon sprites
-    this.view.addEventListener("mousedown", this.movePokemonTest.bind(this))
-    // this.view.addEventListener("mousemove", this.onMouseMove.bind(this))
-    // this.view.addEventListener("mouseup", this.onMouseUp.bind(this))
+    // document.addEventListener("mousedown", this.movePokemonTest.bind(this))
+    document.addEventListener("mousedown", this.onMouseDown.bind(this))
+    document.addEventListener("mousemove", this.onMouseMove.bind(this))
+    document.addEventListener("mouseup", this.onMouseUp.bind(this))
+    // this.isMoving = false
     // this.view.addEventListener("dragstart", this.onDragStart.bind(this))
     // this.view.addEventListener("dragend", this.onDragDrop.bind(this))
     //createPokemon here needs to change to a function that will create or post based on whether a Pokémon exists or not.
     //binding this here makes "this" the pokemons class so it can be used in createPokemon function
   }
 
-  movePokemonTest(e) {
-    let movingSprite = e.target
-    let shiftX = event.clientX - movingSprite.getBoundingClientRect().left;
-    let shiftY = event.clientY - movingSprite.getBoundingClientRect().top;
-
-    movingSprite.style.position = 'absolute';
-    movingSprite.style.zIndex = 1000;
-    document.body.append(movingSprite);
-
-    moveAt(event.pageX, event.pageY);
-
-    // moves the movingSprite at (pageX, pageY) coordinates
-    // taking initial shifts into account
-    function moveAt(pageX, pageY) {
-      movingSprite.style.left = pageX - shiftX + 'px';
-      movingSprite.style.top = pageY - shiftY + 'px';
-    }
-
-    function onMouseMove(event) {
-      moveAt(event.pageX, event.pageY);
-    }
-
-    // move the movingSprite on mousemove
-    this.view.addEventListener('mousemove', onMouseMove);
-
-    // drop the movingSprite, remove unneeded handlers
-    movingSprite.onmouseup = () => {
-      this.view.removeEventListener('mousemove', onMouseMove);
-      movingSprite.onmouseup = null;
-    };
-  }
-
-  // onMouseMove(e) {
-  //   moveAt(event.pageX, event.pageY);
-  //   // console.log("moving")
-  //   // if (e.target.id.includes("pokesprite")) {
-  //   //   console.log("moving")
-  //   // }
-  // }
-
-  onMouseUp(e) {
-    console.log("up")
-  }
-
-
-
-
-  onDragStart(e) {
-    //abstract this into a helper method somehow so code isn't repeated between trainers and Pokémon?
+  onMouseDown(e) {
     if (e.target.id.includes("pokesprite")) {
       console.log(e.target)
-      let xPos = e.target.offsetTop
-      // let yPos = e.target.offset.top
-      console.log(xPos)
-      // console.log(yPos)
+      this.isMoving = true
     }
-    // console.log("drag start")
   }
+
+  onMouseMove(e) {
+    if (this.isMoving === true) {
+      console.log("movement!")
+    }
+    // console.log("movement!")
+  }
+
+  onMouseUp(e) {
+    if (this.isMoving === true) {
+      this.isMoving = false
+    }
+  }
+
+  // movePokemon() {
+
+  // }
+
+
+  // onDragStart(e) {
+  //   //abstract this into a helper method somehow so code isn't repeated between trainers and Pokémon?
+  //   if (e.target.id.includes("pokesprite")) {
+  //     console.log(e.target)
+  //     // let xPos = e.target.offsetTop
+  //     // // let yPos = e.target.offset.top
+  //     // console.log(xPos)
+  //     // console.log(yPos)
+  //   }
+  //   // console.log("drag start")
+  // }
 
   // onDragDrop(e) {
   //   e.preventDefault()
@@ -163,6 +143,56 @@ class Pokemons {
       // is this the place for this to be happening?
     })
   }
+
+  // movePokemonTest(e) {
+  //   this.movingSprite = e.target
+  //   let shiftX = event.clientX - this.movingSprite.getBoundingClientRect().left;
+  //   let shiftY = event.clientY - this.movingSprite.getBoundingClientRect().top;
+
+  //   this.movingSprite.style.position = 'absolute';
+  //   this.movingSprite.style.zIndex = 1000;
+  //   document.body.append(this.movingSprite);
+
+  //   moveAt(event.pageX, event.pageY);
+
+  //   // moves the this.movingSprite at (pageX, pageY) coordinates
+  //   // taking initial shifts into account
+  //   function moveAt(pageX, pageY) {
+  //     this.movingSprite.style.left = pageX - shiftX + 'px';
+  //     this.movingSprite.style.top = pageY - shiftY + 'px';
+  //   }
+
+  //   function onMouseMove(event) {
+  //     moveAt(event.pageX, event.pageY);
+  //   }
+
+  //   // move the this.movingSprite on mousemove
+  //   this.view.addEventListener('mousemove', onMouseMove);
+
+  //   // drop the this.movingSprite, remove unneeded handlers
+  //   this.movingSprite.onmouseup = () => {
+  //     this.view.removeEventListener('mousemove', onMouseMove);
+  //     this.movingSprite.onmouseup = null;
+  //   };
+  //   this.movingSprite.ondragstart = () => {false}
+  // }
+
+
 }
 
 //rendering the Pokémon is not DRY here
+
+
+
+
+// onMouseMove(e) {
+//   moveAt(event.pageX, event.pageY);
+//   // console.log("moving")
+//   // if (e.target.id.includes("pokesprite")) {
+//   //   console.log("moving")
+//   // }
+// }
+
+// onMouseUp(e) {
+//   console.log("up")
+// }
