@@ -19,17 +19,14 @@ class Pokemons {
     this.form.addEventListener("change", this.createOrUpdatePokemon.bind(this))
     this.view = document.getElementById("view-box")
     //moving Pokémon sprites
-    // document.addEventListener("mousedown", this.movePokemonTest.bind(this))
     this.view.addEventListener("mousedown", this.onMouseDown.bind(this))
     this.view.addEventListener("mousemove", this.onMouseMove.bind(this))
     this.view.addEventListener("mouseup", this.onMouseUp.bind(this))
-    // this.isMoving = false
     this.view.addEventListener("dragstart", this.onDragStart.bind(this))
-    // this.view.addEventListener("dragend", this.onDragDrop.bind(this))
-    //createPokemon here needs to change to a function that will create or post based on whether a Pokémon exists or not.
     //binding this here makes "this" the pokemons class so it can be used in createPokemon function
   }
 
+  //Moving Pokémon Sprites Functions
   onDragStart(e) {
     e.preventDefault()
   }
@@ -71,36 +68,6 @@ class Pokemons {
       // console.log("up!")
     }
   }
-
-  // movePokemon() {
-
-  // }
-
-
-  // onDragStart(e) {
-  //   //abstract this into a helper method somehow so code isn't repeated between trainers and Pokémon?
-  //   if (e.target.id.includes("pokesprite")) {
-  //     console.log(e.target)
-  //     // let xPos = e.target.offsetTop
-  //     // // let yPos = e.target.offset.top
-  //     // console.log(xPos)
-  //     // console.log(yPos)
-  //   }
-  //   // console.log("drag start")
-  // }
-
-  // onDragDrop(e) {
-  //   e.preventDefault()
-  //   if (e.target.id.includes("pokesprite")) {
-  //     // console.log(e.screenX)
-  //     e.target.style.position = "absolute"
-  //     e.target.style.top = `${e.pageX}px`
-  //     console.log(e.target.style.top)
-  //     // let yPos = e.target.offset.top
-  //     // console.log(e.screenY)
-  //     // console.log(yPos)
-  //   }
-  // }
 
   createOrUpdatePokemon(e) {
     //iterate through this.pokemons--a "find" for a Pokémon with the boxnumber
@@ -205,17 +172,3 @@ class Pokemons {
 
 //rendering the Pokémon is not DRY here
 
-
-
-
-// onMouseMove(e) {
-//   moveAt(event.pageX, event.pageY);
-//   // console.log("moving")
-//   // if (e.target.id.includes("pokesprite")) {
-//   //   console.log("moving")
-//   // }
-// }
-
-// onMouseUp(e) {
-//   console.log("up")
-// }
