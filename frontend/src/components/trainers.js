@@ -12,8 +12,10 @@ class Trainers {
 
   initBindingsAndEventListeners() {
     this.div = document.getElementById("trainer-view")
+    //for updating trainer sprite
     this.form = document.getElementById("select-form")
     this.form.addEventListener("change", this.updateTrainerSprite.bind(this))
+    //for signing up or logging in trainer
     this.loginField = document.getElementById("trainerlogin")
     this.loginSubmit = document.getElementById("submitlogin")
     this.login = document.getElementById("login")
@@ -22,6 +24,12 @@ class Trainers {
     this.signupSubmit = document.getElementById("submitsignup")
     this.signup = document.getElementById("signup")
     this.signup.addEventListener("submit", this.createAndLoginTrainer.bind(this))
+    //for moving trainer sprite
+    this.view = document.getElementById("view-box")
+    this.view.addEventListener("mousedown", this.onMouseDown.bind(this))
+    this.view.addEventListener("mousemove", this.onMouseMove.bind(this))
+    this.view.addEventListener("mouseup", this.onMouseUp.bind(this))
+    this.view.addEventListener("dragstart", this.onDragStart.bind(this))
   }
 
   fetchAndLoadTrainers() {
@@ -102,6 +110,62 @@ class Trainers {
       })
     }
 
+  }
+
+  //Moving Trainer Sprite functions
+
+  onDragStart(e) {
+    e.preventDefault()
+  }
+
+  onMouseDown(e) {
+    e.preventDefault()
+    let movingSprite = e.target
+    if (movingSprite.id === "trainersprite") {
+      console.log(movingSprite)
+      movingSprite.style.position = "absolute"
+      movingSprite.style.zIndex = parseInt(movingSprite.style.zIndex, 10) + 7
+      function moveAt(pageX, pageY) {
+        movingSprite.style.left = Math.round(pageX - movingSprite.offsetWidth / 2) + 'px';
+        movingSprite.style.top = Math.round(pageY - movingSprite.offsetHeight / 2) + 'px';
+      }
+      moveAt(event.pageX, event.pageY)
+      this.isMoving = true
+    }
+  }
+
+  onMouseMove(e) {
+    e.preventDefault()
+    let movingSprite = e.target
+    // console.log(movingSprite.id.includes("pokesprite"))
+    if (this.isMoving === true && movingSprite.id === "trainersprite") {
+      // console.log("movement!")
+      function moveAt(pageX, pageY) {
+        movingSprite.style.left = Math.round(pageX - movingSprite.offsetWidth / 2) + 'px';
+        movingSprite.style.top = Math.round(pageY - movingSprite.offsetHeight / 2) + 'px';
+      }
+      moveAt(event.pageX, event.pageY)
+    }
+  }
+
+  onMouseUp(e) {
+    let movingSprite = e.target
+    e.preventDefault()
+    if (this.isMoving === true && movingSprite.id === "trainersprite") {
+      this.isMoving = false
+      this.updateTrainerPosition(e)
+      // console.log("up!")
+    }
+  }
+
+  updateTrainerPosition(e) {
+    console.log("update trainer position firing")
+    // const movingSpriteNum = parseInt(e.target.id[e.target.id.length-1])
+    // const pokemonObj = this.pokemons.find(pokemon => pokemon.number === movingSpriteNum)
+    // const zindex = e.target.style.zIndex
+    // const xaxis = e.target.style.left
+    // const yaxis = e.target.style.top
+    // this.adapter.updateTrainerPosition(pokemonObj.id, zindex, xaxis, yaxis)
   }
 
 
