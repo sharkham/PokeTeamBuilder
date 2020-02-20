@@ -16,7 +16,7 @@ class PokemonsAdapter {
       height: pokedexEntry.height,
       // xaxis: sizeValues[x],
       // yaxis: [y],
-      // zindex: [z],
+      zindex: 1,
       trainer_id: trainerId
     }
     return fetch(this.baseUrl, {
