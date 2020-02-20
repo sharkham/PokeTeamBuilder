@@ -19,6 +19,7 @@ class Pokemon {
     const image = document.createElement("img")
     image.setAttribute("src", this.image)
     image.setAttribute("id", `pokesprite${this.number}`)
+    image.style.zIndex = this.zindex
     this.setSpriteHeight(image)
     return image
   }
