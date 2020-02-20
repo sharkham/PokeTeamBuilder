@@ -33,7 +33,7 @@ class TrainersAdapter {
     }).then(res => res.json())
   }
 
-  updateTrainer(trainerId, sprite) {
+  updateTrainerSprite(trainerId, sprite) {
     const trainer = {
       image: sprite.image
     }
