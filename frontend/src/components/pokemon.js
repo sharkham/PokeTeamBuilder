@@ -30,7 +30,11 @@ class Pokemon {
   }
 
   setSpriteHeight(image) {
-    image.style.height = `${(this.height * 57)/15}px`
+    let spriteHeight = Math.round((this.height * 57)/15)
+    if (spriteHeight > 500) {
+      spriteHeight = Math.round((spriteHeight * .75))
+    }
+    image.style.height = `${spriteHeight}px`
     // const size = (this.height * 57)/15
     // return `${(this.height * 57)/15}px`
   }
