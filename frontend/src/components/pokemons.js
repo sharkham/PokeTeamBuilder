@@ -66,9 +66,19 @@ class Pokemons {
     e.preventDefault()
     if (this.isMoving === true && movingSprite.id.includes("pokesprite")) {
       this.isMoving = false
-      // this.updatePokemonPosition(e)
+      this.updatePokemonPosition(e)
       // console.log("up!")
     }
+  }
+
+  updatePokemonPosition(e) {
+    // console.log("update position firing")
+    const movingSpriteNum = parseInt(e.target.id[e.target.id.length-1])
+    const pokemonObj = this.pokemons.find(pokemon => pokemon.number === movingSpriteNum)
+    const zindex = e.target.style.zIndex
+    const xaxis = e.target.style.left
+    const yaxis = e.target.style.top
+    this.adapter.updatePokemonPosition(pokemonObj, zindex, xaxis, yaxis)
   }
 
   createOrUpdatePokemon(e) {
@@ -83,8 +93,6 @@ class Pokemons {
         this.createPokemon(entryNum, boxNumber)
       }
     }
-    // console.log(e.target)
-
   }
 
   updatePokemonType(pokemonObj, entryNum, boxNumber) {
