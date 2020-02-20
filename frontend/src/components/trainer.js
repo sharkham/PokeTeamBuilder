@@ -22,13 +22,21 @@ class Trainer {
     this.h2.innerText = this.name
     this.h2.setAttribute("id", "trainername")
     this.h2.setAttribute("trainerid", `${this.id}`)
-    this.renderTrainerInViewBox()
+    this.view.appendChild(this.viewBoxSprite())
     this.renderTrainerInControlBox()
     // this.pokemons = new Pokemons(this.entries, this.trainer)
   }
 
-  renderTrainerInViewBox() {
-    this.view.innerHTML += `<img src="${this.image}" id="trainersprite">`
+  viewBoxSprite() {
+    const image = document.createElement("img")
+    image.setAttribute("src", this.image)
+    image.setAttribute("id", "trainersprite")
+    image.style.position = this.position
+    image.style.zIndex = this.zindex
+    image.style.left = `${this.xaxis}px`
+    image.style.top = `${this.yaxis}px`
+    return image
+    // this.view.innerHTML += `<img src="${this.image}" id="trainersprite">`
   }
 
   renderTrainerInControlBox() {
