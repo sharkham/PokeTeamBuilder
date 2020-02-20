@@ -27,7 +27,7 @@ class Api::V1::TrainersController < ApplicationController
   private
 
   def trainer_params
-    params.require(:trainer).permit(:id, :name, :image, :height, :xaxis, :yaxis, :zindex. :position)
+    params.require(:trainer).permit(:id, :name, :image, :height, :xaxis, :yaxis, :zindex, :position)
   end
 
 end

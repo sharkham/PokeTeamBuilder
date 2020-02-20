@@ -36,7 +36,7 @@ class Pokemons {
     let movingSprite = e.target
     if (movingSprite.id.includes("pokesprite")) {
       console.log(movingSprite)
-      // movingSprite.style.position = "absolute"
+      movingSprite.style.position = "absolute"
       movingSprite.style.zIndex = parseInt(movingSprite.style.zIndex, 10) + 7
       function moveAt(pageX, pageY) {
         movingSprite.style.left = Math.round(pageX - movingSprite.offsetWidth / 2) + 'px';

@@ -14,9 +14,8 @@ class PokemonsAdapter {
       image: pokedexEntry.image,
       icon: pokedexEntry.icon,
       height: pokedexEntry.height,
-      // xaxis: sizeValues[x],
-      // yaxis: [y],
-      zindex: 1,
+      position: "static",
+      zindex: 0,
       trainer_id: trainerId
     }
     return fetch(this.baseUrl, {
@@ -55,7 +54,8 @@ class PokemonsAdapter {
     const pokemon = {
       zindex: zindex,
       xaxis: xaxis,
-      yaxis: yaxis
+      yaxis: yaxis,
+      position: "absolute"
     }
     return fetch(`${this.baseUrl}/${pokeId}`, {
       method: "PATCH",

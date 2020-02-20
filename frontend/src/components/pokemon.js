@@ -10,6 +10,7 @@ class Pokemon {
     this.xaxis = entryJSON.xaxis
     this.yaxis = entryJSON.yaxis
     this.zindex = entryJSON.zindex
+    this.position = entryJSON.position
 
     //pull this from the page somehow
     // this.trainer_id =
@@ -19,7 +20,7 @@ class Pokemon {
     const image = document.createElement("img")
     image.setAttribute("src", this.image)
     image.setAttribute("id", `pokesprite${this.number}`)
-    image.style.position = "static"
+    image.style.position = this.position
     image.style.zIndex = this.zindex
     image.style.left = `${this.xaxis}px`
     image.style.top = `${this.yaxis}px`
