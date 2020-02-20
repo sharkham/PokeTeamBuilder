@@ -4,12 +4,12 @@ class Trainer {
     this.name = entryJSON.name
     this.image = entryJSON.image
     this.height = entryJSON.height
+    this.xaxis = entryJSON.xaxis
+    this.yaxis = entryJSON.yaxis
+    this.zindex = entryJSON.zindex
+    this.position = entryJSON.position
     this.pokemons = entryJSON.pokemons
     this.initBindingsAndEventListeners()
-    //set these to defaults on render, somehow depending on which select they come from
-    // this.xaxis =
-    // this.yaxis =
-    // this.zindex =
   }
 
   initBindingsAndEventListeners() {
