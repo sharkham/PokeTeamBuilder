@@ -162,10 +162,10 @@ class Trainers {
     console.log("update trainer position firing")
     // const movingSpriteNum = parseInt(e.target.id[e.target.id.length-1])
     // const pokemonObj = this.pokemons.find(pokemon => pokemon.number === movingSpriteNum)
-    // const zindex = e.target.style.zIndex
-    // const xaxis = e.target.style.left
-    // const yaxis = e.target.style.top
-    // this.adapter.updateTrainerPosition(pokemonObj.id, zindex, xaxis, yaxis)
+    const zindex = e.target.style.zIndex
+    const xaxis = e.target.style.left
+    const yaxis = e.target.style.top
+    this.adapter.updateTrainerPosition(this.trainer.id, zindex, xaxis, yaxis)
   }
 
 

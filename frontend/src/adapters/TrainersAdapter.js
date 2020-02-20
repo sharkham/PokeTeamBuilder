@@ -50,4 +50,23 @@ class TrainersAdapter {
     }).catch(error => console.error(error))
   }
 
+  updateTrainerPosition(trainerId, zindex, xaxis, yaxis) {
+    const trainer = {
+      zindex: zindex,
+      xaxis: xaxis,
+      yaxis: yaxis,
+      position: "absolute"
+    }
+    return fetch(`${this.baseUrl}/${trainerId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({ trainer: trainer })
+    }).then(res => {
+      return res.json()
+    }).catch(error => console.error(error))
+  }
+
 }
