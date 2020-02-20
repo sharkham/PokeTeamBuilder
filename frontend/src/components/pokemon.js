@@ -7,8 +7,8 @@ class Pokemon {
     this.height = entryJSON.height
     this.number = entryJSON.number
     //set these to defaults on render, somehow depending on which select they come from
-    // this.xaxis =
-    // this.yaxis =
+    this.xaxis = entryJSON.xaxis
+    this.yaxis = entryJSON.yaxis
     this.zindex = entryJSON.zindex
 
     //pull this from the page somehow
@@ -19,7 +19,10 @@ class Pokemon {
     const image = document.createElement("img")
     image.setAttribute("src", this.image)
     image.setAttribute("id", `pokesprite${this.number}`)
+    image.style.position = "static"
     image.style.zIndex = this.zindex
+    image.style.left = `${this.xaxis}px`
+    image.style.top = `${this.yaxis}px`
     this.setSpriteHeight(image)
     return image
   }
