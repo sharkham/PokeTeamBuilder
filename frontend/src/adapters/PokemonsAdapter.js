@@ -51,6 +51,24 @@ class PokemonsAdapter {
     }).catch(error => console.error(error))
   }
 
+  updatePokemonPosition(pokeId, zindex, xaxis, yaxis) {
+    const pokemon = {
+      zindex: zindex,
+      xaxis: xaxis,
+      yaxis: yaxis
+    }
+    return fetch(`${this.baseUrl}/${pokeId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({ pokemon: pokemon })
+    }).then(res => {
+      return res.json()
+    }).catch(error => console.error(error))
+  }
+
   //helper methods
 
   // setPositionValues(boxNumber) {

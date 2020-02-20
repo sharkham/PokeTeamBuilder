@@ -78,7 +78,7 @@ class Pokemons {
     const zindex = e.target.style.zIndex
     const xaxis = e.target.style.left
     const yaxis = e.target.style.top
-    this.adapter.updatePokemonPosition(pokemonObj, zindex, xaxis, yaxis)
+    this.adapter.updatePokemonPosition(pokemonObj.id, zindex, xaxis, yaxis)
   }
 
   createOrUpdatePokemon(e) {
