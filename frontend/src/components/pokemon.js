@@ -9,7 +9,7 @@ class Pokemon {
     //set these to defaults on render, somehow depending on which select they come from
     // this.xaxis =
     // this.yaxis =
-    // this.zindex =
+    // this.zindex = entryJSON.zindex
 
     //pull this from the page somehow
     // this.trainer_id =
