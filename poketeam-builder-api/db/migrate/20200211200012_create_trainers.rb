@@ -7,6 +7,7 @@ class CreateTrainers < ActiveRecord::Migration[6.0]
       t.integer :xaxis
       t.integer :yaxis
       t.integer :zindex
+      t.string :position
 
       t.timestamps
     end

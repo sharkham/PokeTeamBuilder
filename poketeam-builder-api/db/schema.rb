@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_220749) do
     t.integer "xaxis"
     t.integer "yaxis"
     t.integer "zindex"
+    t.string "position"
     t.integer "trainer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_220749) do
     t.integer "xaxis"
     t.integer "yaxis"
     t.integer "zindex"
+    t.string "position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

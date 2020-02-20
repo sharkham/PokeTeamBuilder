@@ -9,6 +9,7 @@ class CreatePokemons < ActiveRecord::Migration[6.0]
       t.integer :xaxis
       t.integer :yaxis
       t.integer :zindex
+      t.string :position
       t.belongs_to :trainer, null: false, foreign_key: true
 
       #add the other attributes in here

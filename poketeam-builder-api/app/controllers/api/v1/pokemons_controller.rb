@@ -31,6 +31,6 @@ class Api::V1::PokemonsController < ApplicationController
   private
 
   def pokemon_params
-    params.require(:pokemon).permit(:id, :name, :number, :image, :icon, :height, :xaxis, :yaxis, :zindex, :trainer_id)
+    params.require(:pokemon).permit(:id, :name, :number, :image, :icon, :height, :xaxis, :yaxis, :zindex, :position, :trainer_id)
   end
 end
