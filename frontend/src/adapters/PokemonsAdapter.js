@@ -30,7 +30,7 @@ class PokemonsAdapter {
     .catch(error => console.error(error))
   }
 
-  updatePokemon(pokeId, pokedexEntry) {
+  updatePokemonType(pokeId, pokedexEntry) {
     const pokemon = {
       //updated values
       name: pokedexEntry.name,

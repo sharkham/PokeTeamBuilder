@@ -66,6 +66,7 @@ class Pokemons {
     e.preventDefault()
     if (this.isMoving === true && movingSprite.id.includes("pokesprite")) {
       this.isMoving = false
+      // this.updatePokemonPosition(e)
       // console.log("up!")
     }
   }
@@ -77,7 +78,7 @@ class Pokemons {
       const entryNum = e.target.value
       const pokemonObj = this.pokemons.find(pokemon => pokemon.number === boxNumber)
       if (!!pokemonObj) {
-        this.updatePokemon(pokemonObj, entryNum, boxNumber)
+        this.updatePokemonType(pokemonObj, entryNum, boxNumber)
       } else {
         this.createPokemon(entryNum, boxNumber)
       }
@@ -86,9 +87,9 @@ class Pokemons {
 
   }
 
-  updatePokemon(pokemonObj, entryNum, boxNumber) {
+  updatePokemonType(pokemonObj, entryNum, boxNumber) {
     const pokedexEntry = this.pokedex.entries[entryNum-1]
-    this.adapter.updatePokemon(pokemonObj.id, pokedexEntry).then(pokemon => {
+    this.adapter.updatePokemonType(pokemonObj.id, pokedexEntry).then(pokemon => {
 
       // console.log(pokemonObj)
       // console.log(this.trainer.pokemons)
