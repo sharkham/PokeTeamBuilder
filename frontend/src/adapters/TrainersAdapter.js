@@ -17,12 +17,11 @@ class TrainersAdapter {
   createTrainer(name) {
     const trainer = {
       name: name,
-      image: "images/trainersprites/34.png",
+      image: "images/trainersprites/1.png",
       //don't hard code this later! OR hardcode defauly only
       height: 16,
-      // xaxis: sizeValues[x],
-      // yaxis: [y],
-      // zindex: [z],
+      zindex: 0,
+      position: "static"
     }
     return fetch(this.baseUrl, {
       method: "POST",
