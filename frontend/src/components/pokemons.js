@@ -23,29 +23,46 @@ class Pokemons {
     document.addEventListener("mousemove", this.onMouseMove.bind(this))
     document.addEventListener("mouseup", this.onMouseUp.bind(this))
     // this.isMoving = false
-    // this.view.addEventListener("dragstart", this.onDragStart.bind(this))
+    this.view.addEventListener("dragstart", this.onDragStart.bind(this))
     // this.view.addEventListener("dragend", this.onDragDrop.bind(this))
     //createPokemon here needs to change to a function that will create or post based on whether a Pokémon exists or not.
     //binding this here makes "this" the pokemons class so it can be used in createPokemon function
   }
 
+  onDragStart(e) {
+    e.preventDefault()
+  }
+
   onMouseDown(e) {
-    if (e.target.id.includes("pokesprite")) {
-      console.log(e.target)
+    let movingSprite = e.target
+    if (movingSprite.id.includes("pokesprite")) {
+      console.log(movingSprite)
+      movingSprite.style.position = "absolute"
+      function moveAt(pageX, pageY) {
+        movingSprite.style.left = pageX - movingSprite.offsetWidth / 2 + 'px';
+        movingSprite.style.top = pageY - movingSprite.offsetHeight / 2 + 'px';
+      }
+      moveAt(event.pageX, event.pageY)
       this.isMoving = true
     }
   }
 
   onMouseMove(e) {
+    let movingSprite = e.target
     if (this.isMoving === true) {
       console.log("movement!")
+      function moveAt(pageX, pageY) {
+        movingSprite.style.left = pageX - movingSprite.offsetWidth / 2 + 'px';
+        movingSprite.style.top = pageY - movingSprite.offsetHeight / 2 + 'px';
+      }
+      moveAt(event.pageX, event.pageY)
     }
-    // console.log("movement!")
   }
 
   onMouseUp(e) {
     if (this.isMoving === true) {
       this.isMoving = false
+      console.log("up!")
     }
   }
 
