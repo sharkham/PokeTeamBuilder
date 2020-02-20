@@ -15,13 +15,14 @@ class Pokemons {
     document.getElementsByTagName("H1")[0].getAttribute("class")
     // //find the trainer from id put on page??
     this.form = document.getElementById("select-form")
+    console.log(this.form)
     this.form.addEventListener("change", this.createOrUpdatePokemon.bind(this))
     this.view = document.getElementById("view-box")
     //moving Pokémon sprites
     // document.addEventListener("mousedown", this.movePokemonTest.bind(this))
-    document.addEventListener("mousedown", this.onMouseDown.bind(this))
-    document.addEventListener("mousemove", this.onMouseMove.bind(this))
-    document.addEventListener("mouseup", this.onMouseUp.bind(this))
+    this.view.addEventListener("mousedown", this.onMouseDown.bind(this))
+    this.view.addEventListener("mousemove", this.onMouseMove.bind(this))
+    this.view.addEventListener("mouseup", this.onMouseUp.bind(this))
     // this.isMoving = false
     this.view.addEventListener("dragstart", this.onDragStart.bind(this))
     // this.view.addEventListener("dragend", this.onDragDrop.bind(this))
@@ -34,13 +35,14 @@ class Pokemons {
   }
 
   onMouseDown(e) {
+    e.preventDefault()
     let movingSprite = e.target
     if (movingSprite.id.includes("pokesprite")) {
       console.log(movingSprite)
       movingSprite.style.position = "absolute"
       function moveAt(pageX, pageY) {
-        movingSprite.style.left = pageX - movingSprite.offsetWidth / 2 + 'px';
-        movingSprite.style.top = pageY - movingSprite.offsetHeight / 2 + 'px';
+        movingSprite.style.left = Math.round(pageX - movingSprite.offsetWidth / 2) + 'px';
+        movingSprite.style.top = Math.round(pageY - movingSprite.offsetHeight / 2) + 'px';
       }
       moveAt(event.pageX, event.pageY)
       this.isMoving = true
@@ -48,21 +50,25 @@ class Pokemons {
   }
 
   onMouseMove(e) {
+    e.preventDefault()
     let movingSprite = e.target
-    if (this.isMoving === true) {
-      console.log("movement!")
+    // console.log(movingSprite.id.includes("pokesprite"))
+    if (this.isMoving === true && movingSprite.id.includes("pokesprite")) {
+      // console.log("movement!")
       function moveAt(pageX, pageY) {
-        movingSprite.style.left = pageX - movingSprite.offsetWidth / 2 + 'px';
-        movingSprite.style.top = pageY - movingSprite.offsetHeight / 2 + 'px';
+        movingSprite.style.left = Math.round(pageX - movingSprite.offsetWidth / 2) + 'px';
+        movingSprite.style.top = Math.round(pageY - movingSprite.offsetHeight / 2) + 'px';
       }
       moveAt(event.pageX, event.pageY)
     }
   }
 
   onMouseUp(e) {
-    if (this.isMoving === true) {
+    let movingSprite = e.target
+    e.preventDefault()
+    if (this.isMoving === true && movingSprite.id.includes("pokesprite")) {
       this.isMoving = false
-      console.log("up!")
+      // console.log("up!")
     }
   }
 
