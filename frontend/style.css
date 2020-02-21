@@ -25,6 +25,13 @@ body {
   background-color: #FFFFFF;
 }
 
+.login {
+  margin-bottom:5px;
+}
+.dropdown-menu {
+  width: 300px !important;
+}
+
 /* .container {
   background-image: url('images/background/rse.png')
 } */

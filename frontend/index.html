@@ -26,25 +26,25 @@
                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submitsignup" id="submitsignup">Submit</button>
                 </form> -->
                 <ul class="navbar-nav mr-right">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown" id="dropdownLoginLi">
+                        <a class="nav-link dropdown-toggle" id="dropdownLoginForm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Login
                         </a>
-                        <div class="dropdown-menu p-3">
+                        <div class="dropdown-menu p-3" id="dropdownLoginDiv">
                             <form class="form-horizontal" id="login">
                                 <input class="form-control login" type="text" name="trainerlogin" id="trainerlogin" required>
                                 <button class="btn btn-primary" type="submit" name="submitlogin" id="submitlogin">Login</button>
                             </form>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown" id="dropdownSignupLi">
+                        <a class="nav-link dropdown-toggle" id="dropdownSignupForm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sign Up
                         </a>
-                        <div class="dropdown-menu p-3">
+                        <div class="dropdown-menu p-3" id="dropdownSignupDiv">
                             <form class="form-horizontal" id="signup">
                                 <input class="form-control login" type="text" name="trainersignup" id="trainersignup" required>
-                                <input class="btn btn-primary" type="button" name="submitsignup" id="submitsignup" value="Sign Up">
+                                <button class="btn btn-primary" type="submit" name="submitsignup" id="submitsignup">Sign Up</button>
                             </form>
                         </div>
                     </li>

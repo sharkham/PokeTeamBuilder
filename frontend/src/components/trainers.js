@@ -30,6 +30,13 @@ class Trainers {
     this.view.addEventListener("mousemove", this.onMouseMove.bind(this))
     this.view.addEventListener("mouseup", this.onMouseUp.bind(this))
     this.view.addEventListener("dragstart", this.onDragStart.bind(this))
+    //for toggling dropdown menus
+    this.dropdownLoginLi = document.getElementById("dropdownLoginLi")
+    this.dropdownLoginForm = document.getElementById("dropdownLoginForm")
+    this.dropdownLoginDiv = document.getElementById("dropdownLoginDiv")
+    this.dropdownSignupLi = document.getElementById("dropdownSignupLi")
+    this.dropdownSignupForm = document.getElementById("dropdownSignupForm")
+    this.dropdownSignupDiv = document.getElementById("dropdownSignupDiv")
   }
 
   fetchAndLoadTrainers() {
@@ -42,11 +49,24 @@ class Trainers {
     })
   }
 
+  collapseSignup() {
+    this.dropdownSignupLi.classList.remove("show")
+    this.dropdownSignupForm.setAttribute("aria-expanded", "false")
+    this.dropdownSignupDiv.classList.remove("show")
+  }
+
+  collapseLogin() {
+    this.dropdownLoginLi.classList.remove("show")
+    this.dropdownLoginForm.setAttribute("aria-expanded", "false")
+    this.dropdownLoginDiv.classList.remove("show")
+  }
+
   createAndLoginTrainer(e) {
     e.preventDefault()
     const name = this.signupField.value
     const trainerObj = this.trainers.find(trainer => trainer.name === name)
     if (!trainerObj) {
+      this.collapseSignup()
       this.adapter.createTrainer(name)
       .then(trainer => {
         this.trainer = new Trainer(trainer)
