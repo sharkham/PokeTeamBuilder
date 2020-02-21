@@ -12,7 +12,7 @@ class Pokemons {
   }
 
   initBindingsAndEventListeners() {
-    document.getElementsByTagName("H1")[0].getAttribute("class")
+    // document.getElementsByTagName("H1")[0].getAttribute("class")
     // //find the trainer from id put on page??
     this.form = document.getElementById("select-form")
     console.log(this.form)
