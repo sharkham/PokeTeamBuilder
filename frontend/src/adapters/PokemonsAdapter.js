@@ -9,6 +9,7 @@ class PokemonsAdapter {
 
   createPokemon(trainerId, pokedexEntry, boxNumber) {
     const pokemon = {
+      pokedexid: pokedexEntry.id,
       name: pokedexEntry.name,
       number: boxNumber,
       image: pokedexEntry.image,
@@ -32,11 +33,11 @@ class PokemonsAdapter {
   updatePokemonType(pokeId, pokedexEntry) {
     const pokemon = {
       //updated values
+      pokedexid: pokedexEntry.id,
       name: pokedexEntry.name,
       image: pokedexEntry.image,
       icon: pokedexEntry.icon,
-      height: pokedexEntry.height,
-      pokedexid: pokedexEntry.id
+      height: pokedexEntry.height
     }
     return fetch(`${this.baseUrl}/${pokeId}`, {
       method: "PATCH",

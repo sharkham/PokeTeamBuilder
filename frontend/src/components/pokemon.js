@@ -1,13 +1,12 @@
 class Pokemon {
   constructor(entryJSON) {
     this.id = entryJSON.id
+    this.pokedexid = entryJSON.pokedexid
     this.name = entryJSON.name
     this.image = entryJSON.image
     this.icon = entryJSON.icon
     this.height = entryJSON.height
     this.number = entryJSON.number
-    this.pokedexid = entryJSON.number
-    //set these to defaults on render, somehow depending on which select they come from
     this.xaxis = entryJSON.xaxis
     this.yaxis = entryJSON.yaxis
     this.zindex = entryJSON.zindex
@@ -33,7 +32,7 @@ class Pokemon {
     const controlBoxDiv = document.getElementById(`control-poke-${this.number}`)
     controlBoxDiv.innerHTML = `<img src="${this.icon}" class="controlboxicon">`
     const pokeSelect = document.getElementById(`poke${this.number}`)
-    // pokeSelect.value = this.pokedexid
+    pokeSelect.value = this.pokedexid
   }
 
   setSpriteHeight(image) {
