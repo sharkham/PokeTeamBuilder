@@ -20,7 +20,7 @@ class Trainer {
   }
 
   renderTrainer() {
-    this.heading.innerText = `Trainer: ${this.name}`
+    this.heading.innerText = `Trainer: ${this.name}  `
     this.heading.setAttribute("id", "trainername")
     this.heading.setAttribute("trainerid", `${this.id}`)
     this.view.appendChild(this.viewBoxSprite())
