@@ -49,18 +49,6 @@ class Trainers {
     })
   }
 
-  collapseSignup() {
-    this.dropdownSignupLi.classList.remove("show")
-    this.dropdownSignupForm.setAttribute("aria-expanded", "false")
-    this.dropdownSignupDiv.classList.remove("show")
-  }
-
-  collapseLogin() {
-    this.dropdownLoginLi.classList.remove("show")
-    this.dropdownLoginForm.setAttribute("aria-expanded", "false")
-    this.dropdownLoginDiv.classList.remove("show")
-  }
-
   createAndLoginTrainer(e) {
     e.preventDefault()
     const name = this.signupField.value
@@ -84,6 +72,7 @@ class Trainers {
     const value = this.loginField.value
     const trainerObj = this.trainers.find(trainer => trainer.name === value)
     if (!!trainerObj) {
+      this.collapseLogin()
       const trainerId = trainerObj.id
       this.adapter.getTrainer(trainerId)
       .then(trainer => {
@@ -186,6 +175,20 @@ class Trainers {
     const xaxis = e.target.style.left
     const yaxis = e.target.style.top
     this.adapter.updateTrainerPosition(this.trainer.id, zindex, xaxis, yaxis)
+  }
+
+  //Helper methods for dropdowns
+
+  collapseSignup() {
+    this.dropdownSignupLi.classList.remove("show")
+    this.dropdownSignupForm.setAttribute("aria-expanded", "false")
+    this.dropdownSignupDiv.classList.remove("show")
+  }
+
+  collapseLogin() {
+    this.dropdownLoginLi.classList.remove("show")
+    this.dropdownLoginForm.setAttribute("aria-expanded", "false")
+    this.dropdownLoginDiv.classList.remove("show")
   }
 
 
