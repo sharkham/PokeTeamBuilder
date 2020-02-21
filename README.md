@@ -19,7 +19,9 @@ Ever wanted an easy way to tell how big your favourite team of Pokémon is compa
 ![Screenshot of the app](frontend/images/readme/screencap.png)
 
 ## Sources
-This app's Rails API makes use of Pokémon data from [PokéAPI](https://pokeapi.co/), pulled into the API database on `rails db:seed` using the [REST Client](https://github.com/rest-client/rest-client) gem
+This app's Rails API makes use of Pokémon data from [PokéAPI](https://pokeapi.co/), pulled into the API database on `rails db:seed` using the [REST Client](https://github.com/rest-client/rest-client) gem.
+
+Sprites and icons were downloaded from the [PKMN.net Sprite Resource](https://pkmn.net/?action=content&page=viewpage&id=8644), which allows for free usage.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
