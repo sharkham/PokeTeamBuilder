@@ -1,18 +1,9 @@
 class MoveSpriteManager {
   constructor() {
-    // this.initSpriteBindingsAndEventListeners()
   }
 
-  // initSpriteBindingsAndEventListeners() {
-  //   this.view = document.getElementById("view-box")
-  //   //moving Pokémon sprites
-  //   this.view.addEventListener("mousedown", this.onMouseDown.bind(this))
-  //   this.view.addEventListener("mousemove", this.onMouseMove.bind(this))
-  //   this.view.addEventListener("mouseup", this.onMouseUp.bind(this))
-  //   this.view.addEventListener("dragstart", this.onDragStart.bind(this))
-  // }
 
-  //Moving Pokémon Sprites Functions
+  //Moving Sprites Functions
   onDragStart(e) {
     e.preventDefault()
   }
@@ -47,17 +38,4 @@ class MoveSpriteManager {
     }
   }
 
-  // onMouseUp(e) {
-  //   let movingSprite = e.target
-  //   e.preventDefault()
-  //   if (this.isMoving === true && movingSprite.id.includes("sprite")) {
-  //     this.isMoving = false
-  //     if (movingSprite.id.includes("pokesprite")) {
-  //       this.updatePokemonPosition(e)
-  //     } else if (movingSprite.id === "trainersprite") {
-  //       this.updateTrainerPosition(e)
-  //     }
-  //     // console.log("up!")
-  //   }
-  // }
 }

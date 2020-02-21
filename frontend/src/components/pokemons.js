@@ -1,5 +1,6 @@
 class Pokemons {
   constructor(entries, trainer){
+
     this.trainer = trainer
     this.pokemons = this.trainer.pokemons
     //this needs to load with the trainer's Pokemon.
