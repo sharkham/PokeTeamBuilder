@@ -31,6 +31,8 @@ class Pokemon {
   renderPokemonInControlBox() {
     const controlBoxDiv = document.getElementById(`control-poke-${this.number}`)
     controlBoxDiv.innerHTML = `<img src="${this.icon}" class="controlboxicon">`
+    const pokeSelect = document.getElementById(`poke${this.number}`)
+    // pokeSelect.value = this.pokedexnum
   }
 
   setSpriteHeight(image) {

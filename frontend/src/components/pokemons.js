@@ -136,7 +136,8 @@ class Pokemons {
     this.pokemons.forEach(pokemon => {
       pokemon = new Pokemon(pokemon)
       this.view.appendChild(pokemon.viewBoxSprite())
-      let testVar = document.getElementById(`pokesprite${pokemon.number}`)
+
+      // let testVar = document.getElementById(`pokesprite${pokemon.number}`)
       // console.log(testVar.clientHeight)
       pokemon.renderPokemonInControlBox()
       // this.view.innerHTML += pokemon.viewBoxHTML()
