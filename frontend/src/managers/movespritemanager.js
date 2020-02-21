@@ -1,16 +1,16 @@
 class MoveSpriteManager {
   constructor() {
-    this.initSpriteBindingsAndEventListeners()
+    // this.initSpriteBindingsAndEventListeners()
   }
 
-  initSpriteBindingsAndEventListeners() {
-    this.view = document.getElementById("view-box")
-    //moving Pokémon sprites
-    this.view.addEventListener("mousedown", this.onMouseDown.bind(this))
-    this.view.addEventListener("mousemove", this.onMouseMove.bind(this))
-    this.view.addEventListener("mouseup", this.onMouseUp.bind(this))
-    this.view.addEventListener("dragstart", this.onDragStart.bind(this))
-  }
+  // initSpriteBindingsAndEventListeners() {
+  //   this.view = document.getElementById("view-box")
+  //   //moving Pokémon sprites
+  //   this.view.addEventListener("mousedown", this.onMouseDown.bind(this))
+  //   this.view.addEventListener("mousemove", this.onMouseMove.bind(this))
+  //   this.view.addEventListener("mouseup", this.onMouseUp.bind(this))
+  //   this.view.addEventListener("dragstart", this.onDragStart.bind(this))
+  // }
 
   //Moving Pokémon Sprites Functions
   onDragStart(e) {
@@ -20,7 +20,7 @@ class MoveSpriteManager {
   onMouseDown(e) {
     e.preventDefault()
     let movingSprite = e.target
-    if (movingSprite.id.includes("prite")) {
+    if (movingSprite.id.includes("sprite")) {
       console.log(movingSprite)
       movingSprite.style.position = "absolute"
       movingSprite.style.zIndex = parseInt(movingSprite.style.zIndex, 10) + 7
@@ -47,17 +47,17 @@ class MoveSpriteManager {
     }
   }
 
-  onMouseUp(e) {
-    let movingSprite = e.target
-    e.preventDefault()
-    if (this.isMoving === true && movingSprite.id.includes("sprite")) {
-      this.isMoving = false
-      if (movingSprite.id.includes("pokesprite")) {
-        this.updatePokemonPosition(e)
-      } else if (movingSprite.id === "trainersprite") {
-        this.updateTrainerPosition(e)
-      }
-      // console.log("up!")
-    }
-  }
+  // onMouseUp(e) {
+  //   let movingSprite = e.target
+  //   e.preventDefault()
+  //   if (this.isMoving === true && movingSprite.id.includes("sprite")) {
+  //     this.isMoving = false
+  //     if (movingSprite.id.includes("pokesprite")) {
+  //       this.updatePokemonPosition(e)
+  //     } else if (movingSprite.id === "trainersprite") {
+  //       this.updateTrainerPosition(e)
+  //     }
+  //     // console.log("up!")
+  //   }
+  // }
 }
