@@ -9,61 +9,97 @@
   </head>
   <body>
     <header>
-      <h1>Pokemon Team Builder!</h1>
-      <div id="trainer-view">
-        <h2 id="trainername"></h2>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <!-- <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+            <div id="trainer-set">
+                <!-- <form id="login" class="form-inline my-2 my-lg-0">
+                  Log In:
+                  <input class="form-control mr-sm-2" type="text" name="trainerlogin" id="trainerlogin" required>
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submitlogin" id="submitlogin">Submit</button>
+                </form>
+                <form id="signup" class="form-inline my-2 my-lg-0">
+                  Sign Up:
+                  <input class="form-control mr-sm-2" type="text" name="trainersignup" id="trainersignup" required>
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submitsignup" id="submitsignup">Submit</button>
+                </form> -->
+                <ul class="navbar-nav mr-right">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login
+                        </a>
+                        <div class="dropdown-menu p-3">
+                            <form class="form-horizontal" id="login">
+                                <input class="form-control login" type="text" name="trainerlogin" id="trainerlogin" required>
+                                <button class="btn btn-primary" type="submit" name="submitlogin" id="submitlogin">Login</button>
+                            </form>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sign Up
+                        </a>
+                        <div class="dropdown-menu p-3">
+                            <form class="form-horizontal" id="signup">
+                                <input class="form-control login" type="text" name="trainersignup" id="trainersignup" required>
+                                <input class="btn btn-primary" type="button" name="submitsignup" id="submitsignup" value="Sign Up">
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+          </div>
+      </nav>
+      <div class="jumbotron">
+        <h1 class="display-3">Pokemon Team Builder!</h1>
+        <section id="control-box">
+
+            <!-- <div class="grid-one"> -->
+              <!-- <form id="trainer-select-form"></form> -->
+              <!-- <div id="control-trainer"></div> -->
+            <!-- </div> -->
+
+            <form id="select-form" class="grid-seven">
+              <select class="trainerselect" id="trainerspriteselect" disabled="true"></select>
+
+              <select class="pokeselect" disabled="true"></select>
+                <!-- <div id="control-poke-1"></div> -->
+              <select class="pokeselect" disabled="true"></select>
+                <!-- <div id="control-poke-2"></div> -->
+              <select class="pokeselect" disabled="true"></select>
+                <!-- <div id="control-poke-3"></div> -->
+              <select class="pokeselect" disabled="true"></select>
+                <!-- <div id="control-poke-4"></div> -->
+              <select class="pokeselect" disabled="true"></select>
+                <!-- <div id="control-poke-5"></div> -->
+              <select class="pokeselect" disabled="true"></select>
+                <!-- <div id="control-poke-6"></div> -->
+              <div id="control-trainer"></div>
+              <div id="control-poke-1" class="pokecontrol"></div>
+              <div id="control-poke-2" class="pokecontrol"></div>
+              <div id="control-poke-3" class="pokecontrol"></div>
+              <div id="control-poke-4" class="pokecontrol"></div>
+              <div id="control-poke-5" class="pokecontrol"></div>
+              <div id="control-poke-6" class="pokecontrol"></div>
+            </form>
+
+          </section>
+
       </div>
+
+
     </header>
 
     <div class="container">
+      <div id="trainer-view">
+        <h2 id="trainername"></h2>
+      </div>
       <div id="view-box"></div>
       <!-- <div class="pokemon-icons"></div> -->
 
-      <section id="control-box">
 
-        <!-- <div class="grid-one"> -->
-          <!-- <form id="trainer-select-form"></form> -->
-          <!-- <div id="control-trainer"></div> -->
-        <!-- </div> -->
 
-        <form id="select-form" class="grid-seven">
-          <select class="trainerselect" id="trainerspriteselect" disabled="true"></select>
-
-          <select class="pokeselect" disabled="true"></select>
-            <!-- <div id="control-poke-1"></div> -->
-          <select class="pokeselect" disabled="true"></select>
-            <!-- <div id="control-poke-2"></div> -->
-          <select class="pokeselect" disabled="true"></select>
-            <!-- <div id="control-poke-3"></div> -->
-          <select class="pokeselect" disabled="true"></select>
-            <!-- <div id="control-poke-4"></div> -->
-          <select class="pokeselect" disabled="true"></select>
-            <!-- <div id="control-poke-5"></div> -->
-          <select class="pokeselect" disabled="true"></select>
-            <!-- <div id="control-poke-6"></div> -->
-          <div id="control-trainer"></div>
-          <div id="control-poke-1" class="pokecontrol"></div>
-          <div id="control-poke-2" class="pokecontrol"></div>
-          <div id="control-poke-3" class="pokecontrol"></div>
-          <div id="control-poke-4" class="pokecontrol"></div>
-          <div id="control-poke-5" class="pokecontrol"></div>
-          <div id="control-poke-6" class="pokecontrol"></div>
-        </form>
-
-      </section>
-      <div id="trainer-set">
-        <form id="login">
-          Log In:
-          <input type="text" name="trainerlogin" id="trainerlogin" required>
-          <input type="submit" name="submitlogin" id="submitlogin">
-        </form>
-        <form id="signup">
-          Sign Up:
-          <input type="text" name="trainersignup" id="trainersignup" required>
-          <input type="submit" name="submitsignup" id="submitsignup">
-        </form>
-
-      </div>
 
 
     </div>
