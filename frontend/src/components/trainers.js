@@ -11,7 +11,8 @@ class Trainers {
   }
 
   initBindingsAndEventListeners() {
-    this.div = document.getElementById("trainer-view")
+    //for displaying trainer name
+    // this.div = document.getElementById("trainer-view")
     //for updating trainer sprite
     this.form = document.getElementById("select-form")
     this.form.addEventListener("change", this.updateTrainerSprite.bind(this))
@@ -24,6 +25,7 @@ class Trainers {
     this.signupSubmit = document.getElementById("submitsignup")
     this.signup = document.getElementById("signup")
     this.signup.addEventListener("submit", this.createAndLoginTrainer.bind(this))
+    this.loginsignupFields = document.getElementById("trainer-set")
     //for moving trainer sprite
     this.view = document.getElementById("view-box")
     this.view.addEventListener("mousedown", this.onMouseDown.bind(this))
@@ -95,6 +97,8 @@ class Trainers {
     this.disableSignupFields()
     this.loginField.value = ""
     this.disableLoginFields()
+    this.loginsignupFields.style.display = "none"
+
   }
 
   disableLoginFields() {
@@ -190,6 +194,12 @@ class Trainers {
     this.dropdownLoginForm.setAttribute("aria-expanded", "false")
     this.dropdownLoginDiv.classList.remove("show")
   }
+
+  // switchToLoggedInNav() {
+  //   //to hide login signup fields and display trainer name
+  //   this.loginsignupFields.style.display = "none"
+
+  // }
 
 
 }

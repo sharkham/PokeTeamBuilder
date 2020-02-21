@@ -13,16 +13,16 @@ class Trainer {
   }
 
   initBindingsAndEventListeners() {
-    this.h2 = document.getElementById("trainername")
+    this.heading = document.getElementById("trainername")
     this.view = document.getElementById("view-box")
     this.trainerControlBox = document.getElementById("control-trainer")
     this.trainerSelect = document.getElementById("trainerspriteselect")
   }
 
   renderTrainer() {
-    this.h2.innerText = this.name
-    this.h2.setAttribute("id", "trainername")
-    this.h2.setAttribute("trainerid", `${this.id}`)
+    this.heading.innerText = `Trainer: ${this.name}`
+    this.heading.setAttribute("id", "trainername")
+    this.heading.setAttribute("trainerid", `${this.id}`)
     this.view.appendChild(this.viewBoxSprite())
     this.renderTrainerInControlBox()
     // this.pokemons = new Pokemons(this.entries, this.trainer)
