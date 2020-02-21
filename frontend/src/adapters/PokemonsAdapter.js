@@ -35,7 +35,8 @@ class PokemonsAdapter {
       name: pokedexEntry.name,
       image: pokedexEntry.image,
       icon: pokedexEntry.icon,
-      height: pokedexEntry.height
+      height: pokedexEntry.height,
+      pokedexid: pokedexEntry.id
     }
     return fetch(`${this.baseUrl}/${pokeId}`, {
       method: "PATCH",
