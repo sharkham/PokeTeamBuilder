@@ -26,7 +26,6 @@ class Entries {
   render() {
     //make a select form full of each Pokémon.
     // let selects = document.querySelectorAll("select.pokeselect")
-    console.log(this.selectFields)
     for (let i = 0; i < this.selectFields.length; i++) {
       let select = this.selectFields[i]
       select.setAttribute("id", `poke${i + 1}`)

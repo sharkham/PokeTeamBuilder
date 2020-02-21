@@ -15,7 +15,6 @@ class Pokemons {
     // document.getElementsByTagName("H1")[0].getAttribute("class")
     // //find the trainer from id put on page??
     this.form = document.getElementById("select-form")
-    console.log(this.form)
     this.form.addEventListener("change", this.createOrUpdatePokemon.bind(this))
     this.view = document.getElementById("view-box")
     //moving Pokémon sprites
