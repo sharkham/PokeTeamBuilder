@@ -14,6 +14,10 @@ Ever wanted an easy way to tell how big your favourite team of Pokémon is compa
 7. Run `rails s`
 8. Open `PokeTeamBuilder/frontend/index.html` in your browser of choice
 
+## Usage Example
+
+![Screenshot of the app](frontend/images/readme/screencap.png)
+
 ## Sources
 This app's Rails API makes use of Pokémon data from [PokéAPI](https://pokeapi.co/), pulled into the API database on `rails db:seed` using the [REST Client](https://github.com/rest-client/rest-client) gem
 
