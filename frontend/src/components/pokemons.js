@@ -61,6 +61,53 @@ class Pokemons {
     }
   }
 
+  //test code:
+  //trying to get Pokémon to drag from wherever mousedown is, not jump to mouse
+
+  // onMouseDown(e) {
+  //   e.preventDefault()
+  //   let movingSprite = e.target
+  //   let shiftX = e.clientX - movingSprite.getBoundingClientRect().left;
+  //   let shiftY = e.clientY - movingSprite.getBoundingClientRect().top;
+  //   if (movingSprite.id.includes("pokesprite")) {
+  //     console.log(shiftX)
+  //     movingSprite.style.position = "absolute"
+  //     movingSprite.style.zIndex = parseInt(movingSprite.style.zIndex, 10) + 7
+  //     function moveAt(pageX, pageY) {
+  //       movingSprite.style.left = Math.round(pageX - movingSprite.offsetWidth / 2) + 'px';
+  //       console.log(Math.round(pageX - movingSprite.offsetWidth / 2) + 'px')
+  //       console.log(Math.round(pageX - shiftX) + 'px')
+  //       console.log(movingSprite.style.left)
+  //       // console.log(Math.round(pageX - shiftX) + 'px')
+  //       // console.log(Math.round(pageX - movingSprite.offsetWidth / 2) + 'px')
+  //       movingSprite.style.top = Math.round(pageY - shiftY) + 'px';
+  //       console.log(Math.round(pageY - shiftY) + 'px')
+  //       console.log(movingSprite.style.top)
+  //     }
+  //     moveAt(event.pageX, event.pageY)
+
+  //     this.isMoving = true
+  //   }
+  // }
+
+  // onMouseMove(e) {
+  //   e.preventDefault()
+  //   let movingSprite = e.target
+  //   // console.log(movingSprite.id.includes("pokesprite"))
+  //   let shiftX = e.clientX - movingSprite.getBoundingClientRect().left;
+  //   let shiftY = e.clientY - movingSprite.getBoundingClientRect().top;
+  //   if (this.isMoving === true && movingSprite.id.includes("pokesprite")) {
+  //     // console.log("movement!")
+  //     function moveAt(pageX, pageY) {
+  //       movingSprite.style.left = Math.round(pageX - movingSprite.offsetWidth / 2) + 'px';
+  //       movingSprite.style.top = Math.round(pageY - shiftY) + 'px';
+  //     }
+  //     moveAt(event.pageX, event.pageY)
+  //   }
+  // }
+
+  //end test code
+
   onMouseUp(e) {
     let movingSprite = e.target
     e.preventDefault()
