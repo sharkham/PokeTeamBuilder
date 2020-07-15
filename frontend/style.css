@@ -32,15 +32,15 @@ body {
   width: 300px !important;
 }
 
-.jumbotron{
+/* .jumbotron{ */
   /* position: relative; */
-  padding: 32px 32px 10px 32px !important;
+  /* padding: 32px 32px 10px 32px !important; */
   /* margin-top:70px !important;
   background: #eee;
   margin-top: 23px;
   text-align:left;
   margin-bottom: 0 !important; */
-}
+/* } */
 
 /* .container {
   background-image: url('images/background/rse.png')
