@@ -7,6 +7,12 @@
 
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* .grid-master {
   display: grid;
   grid-template-columns: 1fr 6fr;
@@ -103,5 +109,9 @@ body {
 
 h1 {
   font-size: 5em;
-  font-family: 'bebas_neueregular', sans-serif
+  font-family: 'bebas_neueregular', sans-serif;
+}
+
+.header {
+  background-color: #FFFFFF;
 }
