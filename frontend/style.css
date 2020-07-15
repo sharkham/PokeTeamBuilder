@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'bebas_neueregular';
+  src: url('fonts/bebasneue-regular-webfont.woff2') format('woff2'),
+       url('fonts/bebasneue-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 /* .grid-master {
   display: grid;
   grid-template-columns: 1fr 6fr;
@@ -91,3 +100,7 @@ body {
   grid-template-rows: repeat(2, 150px);
   grid-gap: 1rem;
 } */
+
+h1 {
+  font-size: 5em;
+}
