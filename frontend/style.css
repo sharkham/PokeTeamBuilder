@@ -49,9 +49,15 @@ body {
 .grid-seven {
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template: auto / 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
-  width: 800px;
+  max-width: 800px;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid-seven {
+    display: grid;
+  }
 }
 
 /* .grid-one {
