@@ -148,3 +148,11 @@ nav .dropbtn {
 nav .dropbtn:hover, .dropbtn, .dropbtn:focus {
   background-color: #e8e8e8;
 }
+
+.navContent {
+  display: none;
+}
+
+.show {
+  display: block;
+}

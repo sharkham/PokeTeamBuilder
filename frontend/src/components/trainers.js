@@ -34,11 +34,14 @@ class Trainers {
     this.view.addEventListener("dragstart", this.onDragStart.bind(this))
     //for toggling dropdown menus
     // this.dropdownLoginLi = document.getElementById("dropdownLoginLi")
-    this.dropdownLoginForm = document.getElementById("dropdownLoginForm")
+    this.dropdownLoginButton = document.getElementById("dropdownLoginButton")
     this.dropdownLoginDiv = document.getElementById("dropdownLoginDiv")
+    this.dropdownLoginButton.addEventListener("click", this.showHideLogin.bind(this))
     // this.dropdownSignupLi = document.getElementById("dropdownSignupLi")
-    this.dropdownSignupForm = document.getElementById("dropdownSignupForm")
+    this.dropdownSignupButton = document.getElementById("dropdownSignupButton")
     this.dropdownSignupDiv = document.getElementById("dropdownSignupDiv")
+    this.dropdownSignupButton.addEventListener("click", this.showHideSignup.bind(this))
+
   }
 
   fetchAndLoadTrainers() {
@@ -183,17 +186,38 @@ class Trainers {
 
   //Helper methods for dropdowns
 
+  showHideSignup() {
+    console.log("showhidesignup firing")
+    this.dropdownSignupDiv.classList.toggle("show");
+    // document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  showHideLogin() {
+    console.log("showhidelogin firing")
+    this.dropdownLoginDiv.classList.toggle("show");
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  // window.onclick = function(e) {
+  //   if (!e.target.matches('.dropbtn')) {
+  //   var myDropdown = document.getElementById("myDropdown");
+  //     if (myDropdown.classList.contains('show')) {
+  //       myDropdown.classList.remove('show');
+  //     }
+  //   }
+  // }
+
   // collapseSignup() {
   //   console.log("collapse signup here")
   //   // this.dropdownSignupLi.classList.remove("show")
-  //   // this.dropdownSignupForm.setAttribute("aria-expanded", "false")
+  //   // this.dropdownSignupButton.setAttribute("aria-expanded", "false")
   //   // this.dropdownSignupDiv.classList.remove("show")
   // }
 
   // collapseLogin() {
   //   console.log("collapse login here")
   //   // this.dropdownLoginLi.classList.remove("show")
-  //   // this.dropdownLoginForm.setAttribute("aria-expanded", "false")
+  //   // this.dropdownLoginButton.setAttribute("aria-expanded", "false")
   //   // this.dropdownLoginDiv.classList.remove("show")
   // }
 
