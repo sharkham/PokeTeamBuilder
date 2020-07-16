@@ -129,6 +129,22 @@ h1 {
 }
 
 nav {
-  background-color: #FFFFFF;
+  background-color: #FFF;
   overflow: auto;
+}
+
+nav .dropbtn {
+  cursor: pointer;
+  font-size: 1em;
+  border: none;
+  outline: none;
+  color: #000;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+nav .dropbtn:hover, .dropbtn, .dropbtn:focus {
+  background-color: #e8e8e8;
 }
