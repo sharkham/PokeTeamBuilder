@@ -10,13 +10,12 @@
   <body>
     <header>
       <nav id="navbar">
-
             <div id="trainer-set">
                 <ul>
                     <li id="dropdownSignupLi">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownSignupForm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button href="#" id="dropdownSignupForm">
                         Create Trainer
-                        </a>
+                        </button>
                         <div id="dropdownSignupDiv">
                             <form id="signup">
                                 <input class="form-control login" type="text" name="trainersignup" id="trainersignup" placeholder="Enter trainer name" required>
@@ -25,9 +24,9 @@
                         </div>
                     </li>
                     <li id="dropdownLoginLi">
-                        <a href="#" id="dropdownLoginForm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button href="#" id="dropdownLoginForm">
                         Load Trainer
-                        </a>
+                        </button>
                         <div id="dropdownLoginDiv">
                             <form id="login">
                                 <input class="form-control login" type="text" name="trainerlogin" id="trainerlogin" placeholder="Enter trainer name" required>
@@ -42,17 +41,13 @@
             <h3 id="trainername"></h3>
           </div>
           <div id="aboutinfo">
-            <ul>
-              <li id="dropdownAboutLi">
-                  <a href="#" id="dropdownAboutLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button href="#">
                   About
-                  </a>
+                  </button>
                   <div id="dropdownAboutDiv">
                       <p>Welcome to Pokémon Team Builder! Once you've created or loaded a trainer, you can select Pokémon from the dropdown menus to make your own Pokémon team, with Pokémon up to Gen 3. The algorithm isn't exact, but the Pokémon sprites are sized relative to their official Pokédex heights.</p>
                       <p>When the sprites load below, click and drag them into position on the background below to make your very own team photo. (The smaller Pokémon are a little shy! If they don't move right away, hover over them again, drag more slowly, and click to drop them in place.)</p>
                   </div>
-              </li>
-            </ul>
           </div>
           <a href="https://github.com/sharkham/PokeTeamBuilder" target="_blank" class="float-right"><img src="images/logos/github.png" style="height: 20px"></a>
           <!-- <a class="btn btn-social-icon btn-twitter">
