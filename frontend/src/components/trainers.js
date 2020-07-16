@@ -183,17 +183,17 @@ class Trainers {
 
   //Helper methods for dropdowns
 
-  collapseSignup() {
-    this.dropdownSignupLi.classList.remove("show")
-    this.dropdownSignupForm.setAttribute("aria-expanded", "false")
-    this.dropdownSignupDiv.classList.remove("show")
-  }
+  // collapseSignup() {
+  //   this.dropdownSignupLi.classList.remove("show")
+  //   this.dropdownSignupForm.setAttribute("aria-expanded", "false")
+  //   this.dropdownSignupDiv.classList.remove("show")
+  // }
 
-  collapseLogin() {
-    this.dropdownLoginLi.classList.remove("show")
-    this.dropdownLoginForm.setAttribute("aria-expanded", "false")
-    this.dropdownLoginDiv.classList.remove("show")
-  }
+  // collapseLogin() {
+  //   this.dropdownLoginLi.classList.remove("show")
+  //   this.dropdownLoginForm.setAttribute("aria-expanded", "false")
+  //   this.dropdownLoginDiv.classList.remove("show")
+  // }
 
   // switchToLoggedInNav() {
   //   //to hide login signup fields and display trainer name
