@@ -130,4 +130,5 @@ h1 {
 
 nav {
   background-color: #FFFFFF;
+  overflow: auto;
 }
