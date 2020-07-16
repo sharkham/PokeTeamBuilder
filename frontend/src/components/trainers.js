@@ -56,7 +56,7 @@ class Trainers {
     const name = this.signupField.value
     const trainerObj = this.trainers.find(trainer => trainer.name === name)
     if (!trainerObj) {
-      this.collapseSignup()
+      // this.collapseSignup()
       this.adapter.createTrainer(name)
       .then(trainer => {
         this.trainer = new Trainer(trainer)
@@ -74,7 +74,7 @@ class Trainers {
     const value = this.loginField.value
     const trainerObj = this.trainers.find(trainer => trainer.name === value)
     if (!!trainerObj) {
-      this.collapseLogin()
+      // this.collapseLogin()
       const trainerId = trainerObj.id
       this.adapter.getTrainer(trainerId)
       .then(trainer => {
@@ -183,19 +183,19 @@ class Trainers {
 
   //Helper methods for dropdowns
 
-  collapseSignup() {
-    console.log("collapse signup here")
-    // this.dropdownSignupLi.classList.remove("show")
-    // this.dropdownSignupForm.setAttribute("aria-expanded", "false")
-    // this.dropdownSignupDiv.classList.remove("show")
-  }
+  // collapseSignup() {
+  //   console.log("collapse signup here")
+  //   // this.dropdownSignupLi.classList.remove("show")
+  //   // this.dropdownSignupForm.setAttribute("aria-expanded", "false")
+  //   // this.dropdownSignupDiv.classList.remove("show")
+  // }
 
-  collapseLogin() {
-    console.log("collapse login here")
-    // this.dropdownLoginLi.classList.remove("show")
-    // this.dropdownLoginForm.setAttribute("aria-expanded", "false")
-    // this.dropdownLoginDiv.classList.remove("show")
-  }
+  // collapseLogin() {
+  //   console.log("collapse login here")
+  //   // this.dropdownLoginLi.classList.remove("show")
+  //   // this.dropdownLoginForm.setAttribute("aria-expanded", "false")
+  //   // this.dropdownLoginDiv.classList.remove("show")
+  // }
 
   // switchToLoggedInNav() {
   //   //to hide login signup fields and display trainer name
