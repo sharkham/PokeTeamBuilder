@@ -187,13 +187,11 @@ class Trainers {
   //Helper methods for dropdowns
 
   showHideSignup() {
-    console.log("showhidesignup firing")
     this.dropdownSignupDiv.classList.toggle("show");
     // document.getElementById("myDropdown").classList.toggle("show");
   }
 
   showHideLogin() {
-    console.log("showhidelogin firing")
     this.dropdownLoginDiv.classList.toggle("show");
   }
 
