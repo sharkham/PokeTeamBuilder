@@ -110,8 +110,20 @@ body {
 h1 {
   font-size: 5em;
   font-family: 'bebas_neueregular', sans-serif;
+  margin-block-start: 0.1em;
+  margin-block-end: 0.1em;
+  /* position: relative;
+  top: -0.3em; */
+  /* line-height: 2em; */
+}
+
+.header-border {
+  background-color: #e8e8e8;
+  /* margin: 10px; */
+  /* padding: 10px; */
 }
 
 .header {
-  background-color: #FFFFFF;
+  /* margin: 0px, 10px, 10px; */
+  padding: 10px 20px;
 }
