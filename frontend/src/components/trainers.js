@@ -33,10 +33,10 @@ class Trainers {
     this.view.addEventListener("mouseup", this.onMouseUp.bind(this))
     this.view.addEventListener("dragstart", this.onDragStart.bind(this))
     //for toggling dropdown menus
-    this.dropdownLoginLi = document.getElementById("dropdownLoginLi")
+    // this.dropdownLoginLi = document.getElementById("dropdownLoginLi")
     this.dropdownLoginForm = document.getElementById("dropdownLoginForm")
     this.dropdownLoginDiv = document.getElementById("dropdownLoginDiv")
-    this.dropdownSignupLi = document.getElementById("dropdownSignupLi")
+    // this.dropdownSignupLi = document.getElementById("dropdownSignupLi")
     this.dropdownSignupForm = document.getElementById("dropdownSignupForm")
     this.dropdownSignupDiv = document.getElementById("dropdownSignupDiv")
   }
