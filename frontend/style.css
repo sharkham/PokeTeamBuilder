@@ -169,6 +169,10 @@ nav .dropbtn:hover, .dropbtn, .dropbtn:focus {
   text-align: left;
 }
 
+#aboutinfo {
+  display: inline-block;
+}
+
 .show {
   display: block;
 }
