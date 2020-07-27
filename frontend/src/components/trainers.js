@@ -197,10 +197,19 @@ class Trainers {
   }
 
   closeDropDown(e) {
-    if (!e.target.matches('#dropdownLoginButton') && !e.target.matches('#dropdownLoginDiv form') && !e.target.matches('#dropdownLoginDiv form input') && !e.target.matches('#dropdownLoginDiv form button')) {
+    // the code below works for doing stuff for the Login only--it doesn't work for the Signup.
+    // if (!e.target.matches('#dropdownLoginButton') && !e.target.matches('#dropdownLoginDiv form') && !e.target.matches('#dropdownLoginDiv form input') && !e.target.matches('#dropdownLoginDiv form button')) {
+
+    // this code works for everything but closing the
+    if (!e.target.matches('.dropdown')) {
       let dropdownLoginDiv = document.getElementById("dropdownLoginDiv");
+      let dropdownSignupDiv = document.getElementById("dropdownSignupDiv");
+      // let aboutDiv = etc
       if (dropdownLoginDiv.classList.contains('show')) {
         dropdownLoginDiv.classList.remove('show');
+        console.log(e.target)
+      }  else if (dropdownSignupDiv.classList.contains('show')) {
+        dropdownSignupDiv.classList.remove('show');
         console.log(e.target)
       }
     // } else if (!e.target.matches('#dropdownSignupButton')) {
