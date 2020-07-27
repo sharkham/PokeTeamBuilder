@@ -197,6 +197,10 @@ class Trainers {
   }
 
   closeDropDown(e) {
+    //what I want:
+    // if event target is NOT dropdownLoginButton or dropdownLoginDiv, if dropdownLoginDiv is showing, hide it
+    //if event target is NOT dropdownSignupButton or dropdownSignupDiv, if dropdownSignupDiv is showing, hide it
+
     // the code below works for doing stuff for the Login only--it doesn't work for the Signup.
     // if (!e.target.matches('#dropdownLoginButton') && !e.target.matches('#dropdownLoginDiv form') && !e.target.matches('#dropdownLoginDiv form input') && !e.target.matches('#dropdownLoginDiv form button')) {
 
@@ -205,13 +209,14 @@ class Trainers {
       let dropdownLoginDiv = document.getElementById("dropdownLoginDiv");
       let dropdownSignupDiv = document.getElementById("dropdownSignupDiv");
       // let aboutDiv = etc
+      console.log(e.target)
       if (dropdownSignupDiv.classList.contains('show') && dropdownLoginDiv.classList.contains('show')) {
         dropdownLoginDiv.classList.remove('show');
         dropdownSignupDiv.classList.remove('show');
-        console.log(e.target)
+        // console.log(e.target)
       }  else if (dropdownSignupDiv.classList.contains('show')) {
         dropdownSignupDiv.classList.remove('show');
-        console.log(e.target)
+        // console.log(e.target)
       } else if (dropdownLoginDiv.classList.contains('show')) {
         dropdownLoginDiv.classList.remove('show');
 
