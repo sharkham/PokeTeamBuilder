@@ -41,7 +41,8 @@ class Trainers {
     this.dropdownSignupButton = document.getElementById("dropdownSignupButton")
     this.dropdownSignupDiv = document.getElementById("dropdownSignupDiv")
     this.dropdownSignupButton.addEventListener("click", this.showHideSignup.bind(this))
-
+    this.body = document.body
+    this.body.addEventListener("click", this.closeDropDown.bind(this))
   }
 
   fetchAndLoadTrainers() {
@@ -195,6 +196,19 @@ class Trainers {
     this.dropdownLoginDiv.classList.toggle("show");
   }
 
+  closeDropDown(e) {
+    if (!e.target.matches('#dropdownLoginButton')) {
+      let dropdownLoginDiv = document.getElementById("dropdownLoginDiv");
+      if (dropdownLoginDiv.classList.contains('show')) {
+        dropdownLoginDiv.classList.remove('show');
+      }
+    } else if (!e.target.matches('#dropdownSignupButton')) {
+      let dropdownSignupDiv = document.getElementById("dropdownSignupDiv");
+      if (dropdownSignupDiv.classList.contains('show')) {
+        dropdownSignupDiv.classList.remove('show');
+      }
+    }
+  }
   // Close the dropdown if the user clicks outside of it
   // window.onclick = function(e) {
   //   if (!e.target.matches('.dropbtn')) {
