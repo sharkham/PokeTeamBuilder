@@ -197,11 +197,11 @@ class Trainers {
   }
 
   closeDropDown(e) {
-    if (!e.target.matches('#dropdownLoginButton') && !e.currentTarget.matches('#dropdownLoginDiv')) {
+    if (!e.target.matches('#dropdownLoginButton') && !e.target.matches('#dropdownLoginDiv form') && !e.target.matches('#dropdownLoginDiv form input') && !e.target.matches('#dropdownLoginDiv form button')) {
       let dropdownLoginDiv = document.getElementById("dropdownLoginDiv");
       if (dropdownLoginDiv.classList.contains('show')) {
         dropdownLoginDiv.classList.remove('show');
-        console.log(e.currentTarget)
+        console.log(e.target)
       }
     // } else if (!e.target.matches('#dropdownSignupButton')) {
     //   let dropdownSignupDiv = document.getElementById("dropdownSignupDiv");
