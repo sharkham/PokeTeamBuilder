@@ -34,19 +34,19 @@ class Trainers {
     this.view.addEventListener("dragstart", this.onDragStart.bind(this))
     //for toggling dropdown menus
     // this.dropdownLoginLi = document.getElementById("dropdownLoginLi")
-    this.dropdownLoginButton = document.getElementById("dropdownLoginButton")
-    this.dropdownLoginDiv = document.getElementById("dropdownLoginDiv")
-    this.dropdownLoginButton.addEventListener("click", this.showHideLogin.bind(this))
-    // this.dropdownSignupLi = document.getElementById("dropdownSignupLi")
-    this.dropdownSignupButton = document.getElementById("dropdownSignupButton")
-    this.dropdownSignupDiv = document.getElementById("dropdownSignupDiv")
-    this.dropdownSignupButton.addEventListener("click", this.showHideSignup.bind(this))
-    this.body = document.body
-    this.body.addEventListener("click", this.closeDropDown.bind(this))
-    //about menu things
-    this.dropdownAboutDiv = document.getElementById("dropdownAboutDiv")
-    this.dropdownAboutButton = document.getElementById("dropdownAboutButton")
-    this.dropdownAboutButton.addEventListener("click", this.showHideAbout.bind(this))
+    // this.dropdownLoginButton = document.getElementById("dropdownLoginButton")
+    // this.dropdownLoginDiv = document.getElementById("dropdownLoginDiv")
+    // this.dropdownLoginButton.addEventListener("click", this.showHideLogin.bind(this))
+    // // this.dropdownSignupLi = document.getElementById("dropdownSignupLi")
+    // this.dropdownSignupButton = document.getElementById("dropdownSignupButton")
+    // this.dropdownSignupDiv = document.getElementById("dropdownSignupDiv")
+    // this.dropdownSignupButton.addEventListener("click", this.showHideSignup.bind(this))
+    // this.body = document.body
+    // this.body.addEventListener("click", this.closeDropDown.bind(this))
+    // //about menu things
+    // this.dropdownAboutDiv = document.getElementById("dropdownAboutDiv")
+    // this.dropdownAboutButton = document.getElementById("dropdownAboutButton")
+    // this.dropdownAboutButton.addEventListener("click", this.showHideAbout.bind(this))
   }
 
   fetchAndLoadTrainers() {
@@ -191,69 +191,42 @@ class Trainers {
 
   //Helper methods for dropdowns
 
-  showHideSignup() {
-    this.dropdownSignupDiv.classList.toggle("show");
-  }
+  // showHideSignup() {
+  //   this.dropdownSignupDiv.classList.toggle("show");
+  // }
 
-  showHideLogin() {
-    this.dropdownLoginDiv.classList.toggle("show");
-  }
+  // showHideLogin() {
+  //   this.dropdownLoginDiv.classList.toggle("show");
+  // }
 
-  showHideAbout() {
-    this.dropdownAboutDiv.classList.toggle("show");
-  }
+  // showHideAbout() {
+  //   this.dropdownAboutDiv.classList.toggle("show");
+  // }
 
-  closeDropDown(e) {
-    //what I want:
-    // if event target is NOT dropdownLoginButton or dropdownLoginDiv, if dropdownLoginDiv is showing, hide it
-    //if event target is NOT dropdownSignupButton or dropdownSignupDiv, if dropdownSignupDiv is showing, hide it
+  // closeDropDown(e) {
+  //   //what I want:
+  //   // if event target is NOT dropdownLoginButton or dropdownLoginDiv, if dropdownLoginDiv is showing, hide it
+  //   //if event target is NOT dropdownSignupButton or dropdownSignupDiv, if dropdownSignupDiv is showing, hide it
 
-    if (!e.target.matches('.dropdownLogin')) {
-      let dropdownLoginDiv = document.getElementById("dropdownLoginDiv");
-      if (dropdownLoginDiv.classList.contains('show')) {
-        dropdownLoginDiv.classList.remove('show');
-      }
-    }
-    if (!e.target.matches('.dropdownSignup')) {
-      let dropdownSignupDiv = document.getElementById("dropdownSignupDiv");
-      if (dropdownSignupDiv.classList.contains('show')) {
-        dropdownSignupDiv.classList.remove('show');
-      }
-    }
-    if (!e.target.matches('.dropdownAbout')) {
-      let dropdownAboutDiv = document.getElementById("dropdownAboutDiv");
-      if (dropdownAboutDiv.classList.contains('show')) {
-        dropdownAboutDiv.classList.remove('show');
-      }
-    }
-
-    // the code below works for doing stuff for the Login only--it doesn't work for the Signup.
-    // if (!e.target.matches('#dropdownLoginButton') && !e.target.matches('#dropdownLoginDiv form') && !e.target.matches('#dropdownLoginDiv form input') && !e.target.matches('#dropdownLoginDiv form button')) {
-
-    // this code works for everything but closing the one dropdown if you've clicked on the other one.
-    // if (!e.target.matches('.dropdown')) {
-    //   let dropdownLoginDiv = document.getElementById("dropdownLoginDiv");
-    //   let dropdownSignupDiv = document.getElementById("dropdownSignupDiv");
-    //   // let aboutDiv = etc
-    //   console.log(e.target)
-    //   if (dropdownSignupDiv.classList.contains('show') && dropdownLoginDiv.classList.contains('show')) {
-    //     dropdownLoginDiv.classList.remove('show');
-    //     dropdownSignupDiv.classList.remove('show');
-    //     // console.log(e.target)
-    //   }  else if (dropdownSignupDiv.classList.contains('show')) {
-    //     dropdownSignupDiv.classList.remove('show');
-    //     // console.log(e.target)
-    //   } else if (dropdownLoginDiv.classList.contains('show')) {
-    //     dropdownLoginDiv.classList.remove('show');
-
-    //   }
-    // // } else if (!e.target.matches('#dropdownSignupButton')) {
-    // //   let dropdownSignupDiv = document.getElementById("dropdownSignupDiv");
-    // //   if (dropdownSignupDiv.classList.contains('show')) {
-    // //     dropdownSignupDiv.classList.remove('show');
-    // //   }
-    // }
-  }
+  //   if (!e.target.matches('.dropdownLogin')) {
+  //     let dropdownLoginDiv = document.getElementById("dropdownLoginDiv");
+  //     if (dropdownLoginDiv.classList.contains('show')) {
+  //       dropdownLoginDiv.classList.remove('show');
+  //     }
+  //   }
+  //   if (!e.target.matches('.dropdownSignup')) {
+  //     let dropdownSignupDiv = document.getElementById("dropdownSignupDiv");
+  //     if (dropdownSignupDiv.classList.contains('show')) {
+  //       dropdownSignupDiv.classList.remove('show');
+  //     }
+  //   }
+  //   if (!e.target.matches('.dropdownAbout')) {
+  //     let dropdownAboutDiv = document.getElementById("dropdownAboutDiv");
+  //     if (dropdownAboutDiv.classList.contains('show')) {
+  //       dropdownAboutDiv.classList.remove('show');
+  //     }
+  //   }
+  // }
   // Close the dropdown if the user clicks outside of it
   // window.onclick = function(e) {
   //   if (!e.target.matches('.dropbtn')) {
