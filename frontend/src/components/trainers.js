@@ -43,6 +43,10 @@ class Trainers {
     this.dropdownSignupButton.addEventListener("click", this.showHideSignup.bind(this))
     this.body = document.body
     this.body.addEventListener("click", this.closeDropDown.bind(this))
+    //about menu things
+    this.dropdownAboutDiv = document.getElementById("dropdownAboutDiv")
+    this.dropdownAboutButton = document.getElementById("dropdownAboutButton")
+    this.dropdownAboutButton.addEventListener("click", this.showHideAbout.bind(this))
   }
 
   fetchAndLoadTrainers() {
@@ -189,11 +193,14 @@ class Trainers {
 
   showHideSignup() {
     this.dropdownSignupDiv.classList.toggle("show");
-    // document.getElementById("myDropdown").classList.toggle("show");
   }
 
   showHideLogin() {
     this.dropdownLoginDiv.classList.toggle("show");
+  }
+
+  showHideAbout() {
+    this.dropdownAboutDiv.classList.toggle("show");
   }
 
   closeDropDown(e) {
@@ -211,6 +218,12 @@ class Trainers {
       let dropdownSignupDiv = document.getElementById("dropdownSignupDiv");
       if (dropdownSignupDiv.classList.contains('show')) {
         dropdownSignupDiv.classList.remove('show');
+      }
+    }
+    if (!e.target.matches('.dropdownAbout')) {
+      let dropdownAboutDiv = document.getElementById("dropdownAboutDiv");
+      if (dropdownAboutDiv.classList.contains('show')) {
+        dropdownAboutDiv.classList.remove('show');
       }
     }
 
