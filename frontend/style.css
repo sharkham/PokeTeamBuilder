@@ -178,6 +178,10 @@ nav .dropbtn:hover, .dropbtn, .dropbtn:focus {
   display: inline-block;
 }
 
+#trainer-view {
+  display: inline-block;
+}
+
 .show {
   display: block;
 }
