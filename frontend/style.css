@@ -153,7 +153,7 @@ nav .dropbtn:hover, .dropbtn, .dropbtn:focus {
   background-color: #e8e8e8;
 }
 
-.navContent {
+.nav-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -162,7 +162,7 @@ nav .dropbtn:hover, .dropbtn, .dropbtn:focus {
   z-index: 1;
 }
 
-.navContent form {
+.nav-content form {
   float: none;
   color: black;
   padding: 12px 16px;
@@ -171,7 +171,7 @@ nav .dropbtn:hover, .dropbtn, .dropbtn:focus {
   text-align: left;
 }
 
-.navContent p {
+.nav-content p {
   float: none;
   color: black;
   padding: 5px 16px;
