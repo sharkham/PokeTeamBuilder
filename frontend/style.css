@@ -196,6 +196,8 @@ nav .dropbtn:hover, .dropbtn, .dropbtn:focus {
 
 .github-logo {
   height: 20px;
+  padding: 8px 16px 14px;
+  vertical-align: middle;
 }
 
 .show {
